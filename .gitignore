@@ -11,3 +11,5 @@ data/source/*
 !data/source/.gitkeep
 data/profiling/
 .agents
+codex_read_md
+

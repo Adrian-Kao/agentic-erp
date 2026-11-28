@@ -1,10 +1,10 @@
 # ERP Agent 交付說明
 
-本專案以 Microsoft FinanceBenchmark 的公開合成資料建置 Aster Electronics 模擬帳務。FastAPI 與 MCP 皆可查詢法人、計算外幣 AR／AP 曝險及重查已保存的報表。資料匯入、報表與稽核使用 MySQL 8.4，自然語言 Agent 的最近報表參照存於 SQLite。本文的相對路徑以專案根目錄為準。
+以 Microsoft FinanceBenchmark 的公開合成資料建置 Aster Electronics 模擬帳務。FastAPI 與 MCP 皆可查詢法人、計算外幣 AR／AP 曝險及重查已保存的報表。資料匯入、報表與稽核使用 MySQL 8.4，自然語言 Agent 的最近報表參照存於 SQLite。本文的相對路徑以專案根目錄為準。
 
 ## 1. 資料集下載與核對
 
-資料固定在 Git commit `6ced62b961d4c18b2ba53f268b443eb852fb73ca`。來源是 Microsoft 為 Dynamics 365 Finance 準備的合成資料，含客戶與供應商主檔，以及 AP、AR 日記帳匯入範本。請保留 MIT 授權通知。 [Microsoft ERP QA 說明](https://github.com/microsoft/FinanceBenchmark/blob/6ced62b961d4c18b2ba53f268b443eb852fb73ca/docs/erp_qa_setup.md) · [MIT 授權](https://github.com/microsoft/FinanceBenchmark/blob/6ced62b961d4c18b2ba53f268b443eb852fb73ca/LICENSE)
+資料固定在 Git commit `6ced62b961d4c18b2ba53f268b443eb852fb73ca`。來源是 Microsoft 為 Dynamics 365 Finance 準備的合成資料，含客戶與供應商主檔，以及 AP、AR 日記帳匯入範本。 [Microsoft ERP QA 說明](https://github.com/microsoft/FinanceBenchmark/blob/6ced62b961d4c18b2ba53f268b443eb852fb73ca/docs/erp_qa_setup.md) · [MIT 授權](https://github.com/microsoft/FinanceBenchmark/blob/6ced62b961d4c18b2ba53f268b443eb852fb73ca/LICENSE)
 
 - 資料壓縮檔 `FO Benchmark_Data.zip` 放在 `data/source/FO Benchmark_Data.zip`。Docker 的 `init` 會唯讀掛載該目錄並直接解析 ZIP。 [下載官方 ZIP](https://raw.githubusercontent.com/microsoft/FinanceBenchmark/6ced62b961d4c18b2ba53f268b443eb852fb73ca/data/fno_benchmark_data_raw/FO%20Benchmark_Data.zip)
 - 授權檔放在 `data/source/FinanceBenchmark-LICENSE.txt`。 [下載官方授權原檔](https://raw.githubusercontent.com/microsoft/FinanceBenchmark/6ced62b961d4c18b2ba53f268b443eb852fb73ca/LICENSE)
