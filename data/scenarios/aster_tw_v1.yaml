@@ -1,0 +1,8 @@
+scenario_id: aster-treasury-v1
+version: "1"
+seed: 113306018
+as_of_date: "2026-11-27"
+first_due_month: "2026-12-01"
+months: 6
+currencies: [USD, EUR, JPY]
+rows_per_currency_month_and_side: 8

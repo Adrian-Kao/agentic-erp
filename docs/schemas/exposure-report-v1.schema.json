@@ -1,0 +1,472 @@
+{
+  "$defs": {
+    "ExposureItem": {
+      "properties": {
+        "entity_id": {
+          "pattern": "^[A-Z0-9][A-Z0-9_-]{0,31}$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "functional_currency": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Functional Currency",
+          "type": "string"
+        },
+        "currency": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Currency",
+          "type": "string"
+        },
+        "period": {
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+          "title": "Period",
+          "type": "string"
+        },
+        "ar_open": {
+          "pattern": "^-?[0-9]{1,16}\\.[0-9]{4}$",
+          "title": "Ar Open",
+          "type": "string"
+        },
+        "ap_open": {
+          "pattern": "^-?[0-9]{1,16}\\.[0-9]{4}$",
+          "title": "Ap Open",
+          "type": "string"
+        },
+        "net_exposure": {
+          "pattern": "^-?[0-9]{1,16}\\.[0-9]{4}$",
+          "title": "Net Exposure",
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "NET_INFLOW",
+            "NET_OUTFLOW",
+            "BALANCED"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "source_ar_count": {
+          "minimum": 0,
+          "title": "Source Ar Count",
+          "type": "integer"
+        },
+        "source_ap_count": {
+          "minimum": 0,
+          "title": "Source Ap Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "entity_id",
+        "functional_currency",
+        "currency",
+        "period",
+        "ar_open",
+        "ap_open",
+        "net_exposure",
+        "direction",
+        "source_ar_count",
+        "source_ap_count"
+      ],
+      "title": "ExposureItem",
+      "type": "object"
+    },
+    "OverdueItem": {
+      "properties": {
+        "entity_id": {
+          "pattern": "^[A-Z0-9][A-Z0-9_-]{0,31}$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "currency": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Currency",
+          "type": "string"
+        },
+        "overdue_ar": {
+          "pattern": "^-?[0-9]{1,16}\\.[0-9]{4}$",
+          "title": "Overdue Ar",
+          "type": "string"
+        },
+        "overdue_ap": {
+          "pattern": "^-?[0-9]{1,16}\\.[0-9]{4}$",
+          "title": "Overdue Ap",
+          "type": "string"
+        },
+        "record_count": {
+          "exclusiveMinimum": 0,
+          "title": "Record Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "entity_id",
+        "currency",
+        "overdue_ar",
+        "overdue_ap",
+        "record_count"
+      ],
+      "title": "OverdueItem",
+      "type": "object"
+    },
+    "Provenance": {
+      "properties": {
+        "source_system": {
+          "title": "Source System",
+          "type": "string"
+        },
+        "data_version": {
+          "title": "Data Version",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^sha256:[a-f0-9]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "source_entity_count": {
+          "minimum": 0,
+          "title": "Source Entity Count",
+          "type": "integer"
+        },
+        "source_ar_count": {
+          "minimum": 0,
+          "title": "Source Ar Count",
+          "type": "integer"
+        },
+        "source_ap_count": {
+          "minimum": 0,
+          "title": "Source Ap Count",
+          "type": "integer"
+        },
+        "source_allocation_count": {
+          "minimum": 0,
+          "title": "Source Allocation Count",
+          "type": "integer"
+        },
+        "upstream_repo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upstream Repo"
+        },
+        "upstream_commit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upstream Commit"
+        },
+        "source_sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Sha256"
+        },
+        "import_batch_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Import Batch Id"
+        },
+        "dataset_version_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dataset Version Id"
+        },
+        "scenario": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario"
+        },
+        "scenario_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario Id"
+        },
+        "scenario_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario Version"
+        },
+        "scenario_seed": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario Seed"
+        },
+        "scenario_config_hash": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario Config Hash"
+        },
+        "source_rows_read": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Source Rows Read",
+          "type": "integer"
+        },
+        "canonical_mapped": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Canonical Mapped",
+          "type": "integer"
+        },
+        "quarantined": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Quarantined",
+          "type": "integer"
+        },
+        "scenario_rows_derived": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Scenario Rows Derived",
+          "type": "integer"
+        },
+        "synthetic_only_rows": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Synthetic Only Rows",
+          "type": "integer"
+        },
+        "source_reference_count": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Source Reference Count",
+          "type": "integer"
+        },
+        "missing_required_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Required Fields",
+          "type": "array"
+        },
+        "participating_source_kinds": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Participating Source Kinds",
+          "type": "object"
+        },
+        "assumption_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumption Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_system",
+        "data_version",
+        "input_hash",
+        "source_entity_count",
+        "source_ar_count",
+        "source_ap_count",
+        "source_allocation_count"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "QualityIssue": {
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "record_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Ref"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "QualityIssue",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "run_id": {
+      "format": "uuid",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "COMPLETED",
+        "PARTIAL",
+        "FAILED"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "validation_status": {
+      "enum": [
+        "PASSED",
+        "WARNINGS",
+        "FAILED"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "as_of_date": {
+      "format": "date",
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "horizon_months": {
+      "maximum": 6,
+      "minimum": 3,
+      "title": "Horizon Months",
+      "type": "integer"
+    },
+    "existing_hedges_included": {
+      "const": false,
+      "default": false,
+      "title": "Existing Hedges Included",
+      "type": "boolean"
+    },
+    "exposures": {
+      "items": {
+        "$ref": "#/$defs/ExposureItem"
+      },
+      "title": "Exposures",
+      "type": "array"
+    },
+    "overdue_summary": {
+      "items": {
+        "$ref": "#/$defs/OverdueItem"
+      },
+      "title": "Overdue Summary",
+      "type": "array"
+    },
+    "data_quality_issues": {
+      "items": {
+        "$ref": "#/$defs/QualityIssue"
+      },
+      "title": "Data Quality Issues",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    }
+  },
+  "required": [
+    "run_id",
+    "status",
+    "validation_status",
+    "as_of_date",
+    "generated_at",
+    "horizon_months",
+    "exposures",
+    "overdue_summary",
+    "data_quality_issues",
+    "provenance"
+  ],
+  "title": "ExposureReport",
+  "type": "object"
+}

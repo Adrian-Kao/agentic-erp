@@ -1,0 +1,13 @@
+{
+  "scenario": "fixture_only",
+  "source_system": "DEMO_SYNTHETIC_FIXTURE",
+  "tenant_id": "DEMO_A",
+  "entity_id": "TW01",
+  "as_of_date": "2026-11-27",
+  "period": "2027-01",
+  "currency": "USD",
+  "ar_open": "1200000.0000",
+  "ap_open": "800000.0000",
+  "net_exposure": "400000.0000",
+  "direction": "NET_INFLOW"
+}

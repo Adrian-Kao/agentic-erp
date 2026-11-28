@@ -1,0 +1,28 @@
+{
+  "exposure": {
+    "contract": "exposure-report-v1",
+    "cash_flow": "AR is money receivable and AP is money payable, in the invoice currency.",
+    "open_amount": "Original amount minus POSTED allocations with effective_date <= as_of_date. VOID allocations do not reduce balances.",
+    "timing": "Due dates determine calendar-month buckets starting in the as-of month. Earlier dates are overdue. Missing due dates are excluded and flagged.",
+    "scope": "Group separately by authorized legal entity, invoice currency and month; exclude functional currency and existing hedges."
+  },
+  "invoices": {
+    "public_fields": ["record_ref", "entity_id", "currency", "due_date", "open_amount", "status"],
+    "status": "SETTLED, CANCELLED and VOID are excluded; OPEN or PARTIALLY_PAID is included only with a positive balance."
+  },
+  "queries": {
+    "entity_list": {"filters": ["entity_ids"], "fields": ["entity_id", "name", "functional_currency"]},
+    "open_ar": {"filters": ["entity_ids", "as_of_date", "currencies", "scenario"], "fields": ["record_ref", "entity_id", "currency", "due_date", "open_amount", "status"]},
+    "open_ap": {"filters": ["entity_ids", "as_of_date", "currencies", "scenario"], "fields": ["record_ref", "entity_id", "currency", "due_date", "open_amount", "status"]},
+    "overdue_ar": {"filters": ["entity_ids", "as_of_date", "currencies", "scenario"], "fields": ["record_ref", "entity_id", "currency", "due_date", "open_amount", "status"]},
+    "overdue_ap": {"filters": ["entity_ids", "as_of_date", "currencies", "scenario"], "fields": ["record_ref", "entity_id", "currency", "due_date", "open_amount", "status"]},
+    "source_lineage": {"filters": ["entity_ids", "as_of_date", "currencies", "scenario"], "fields": ["record_ref", "entity_id", "source_kind", "source_record_ref", "canonical_record_id", "assumption_ids"]}
+  },
+  "dataset": {
+    "default_mysql_scenario": "baseline",
+    "scenarios": ["baseline", "data_quality_faults", "fixture_only"],
+    "source": "Microsoft FinanceBenchmark supplies synthetic journals and master records. Baseline uses simulated AR/AP with row lineage; fixture_only is independent.",
+    "privacy": "Source lineage exposes opaque IDs and assumption IDs. Raw JSON and source financial record payloads are not tools."
+  },
+  "authorization": "Tenant and legal-entity scope are taken from the authenticated principal. Query results are bounded."
+}

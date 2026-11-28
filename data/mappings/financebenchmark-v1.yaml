@@ -1,0 +1,80 @@
+version: financebenchmark-v1
+source_commit: 6ced62b961d4c18b2ba53f268b443eb852fb73ca
+tables:
+  customers:
+    sheet: ""
+    fields:
+      account: CustomerAccount
+      name: OrganizationName
+      currency: CurrencyCode
+  vendors:
+    sheet: ""
+    fields:
+      account: VendorAccountNumber
+      name: VendorOrganizationName
+      currency: CurrencyCode
+  ap:
+    sheet: Sheet1
+    fields:
+      company: Company
+      account_type: Offset account type
+      account: Offset Non-ledger account
+      offset_company: Offset company
+      journal_date: Date
+      debit: Debit
+      credit: Credit
+      currency: Currency
+      line_number: Line number
+  ar:
+    sheet: Sheet1
+    fields:
+      company: Company
+      account_type: Account type
+      account: Non-ledger account
+      offset_company: Offset company
+      journal_date: Date
+      debit: Debit
+      credit: Credit
+      currency: Currency
+      line_number: Line number
+semantics:
+  company:
+    status: DIRECT
+    header: Company
+    note: 兩份 journal 的主要公司為 USMF。保留原值，TW01 屬獨立 Demo 情境。
+  counterparty_account:
+    status: DERIVED_VERIFIABLY
+    header: null
+    note: AR 使用 Customer 端的 Non-ledger account。AP 使用 Vendor 端的 Offset Non-ledger account。分別與客戶、供應商主檔精確核對。
+  currency:
+    status: DIRECT
+    header: Currency
+    note: Journal 欄位為 Currency，主檔欄位為 CurrencyCode。四份資料僅觀察到 USD。
+  journal_amount:
+    status: DIRECT
+    header: null
+    note: 保留 Debit 與 Credit 原欄位。來源的 Debit 有值，Credit 為空。此值本身不表示是否開票、是否收款或剩餘金額。
+  journal_date:
+    status: DIRECT
+    header: Date
+    note: Excel Journal 範本的日期是美式 MM/DD/YYYY 文字。
+  posting_date:
+    status: UNVERIFIED
+    header: null
+    note: Journal Date 可以標準化。來源沒有證明每筆已過帳或可重建歷史結算。
+  due_date:
+    status: MISSING
+    header: null
+    note: 來源沒有發票到期日期。主檔付款條件不提供逐筆到期日。
+  invoice_id:
+    status: MISSING
+    header: null
+    note: Line number 是 journal 行號。
+  settlement_reference:
+    status: MISSING
+    header: null
+    note: 無逐筆 settlement 或付款配置參照。
+  open_balance:
+    status: MISSING
+    header: null
+    note: 無可驗證的未結餘額。

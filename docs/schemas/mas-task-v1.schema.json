@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "ExposureRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_ids": {
+          "items": {
+            "pattern": "^[A-Z0-9][A-Z0-9_-]{0,31}$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Entity Ids",
+          "type": "array"
+        },
+        "as_of_date": {
+          "format": "date",
+          "title": "As Of Date",
+          "type": "string"
+        },
+        "horizon_months": {
+          "default": 6,
+          "maximum": 6,
+          "minimum": 3,
+          "title": "Horizon Months",
+          "type": "integer"
+        },
+        "currencies": {
+          "anyOf": [
+            {
+              "items": {
+                "pattern": "^[A-Z]{3}$",
+                "type": "string"
+              },
+              "maxItems": 16,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currencies"
+        },
+        "include_overdue_summary": {
+          "default": true,
+          "title": "Include Overdue Summary",
+          "type": "boolean"
+        },
+        "scenario": {
+          "anyOf": [
+            {
+              "enum": [
+                "baseline",
+                "data_quality_faults",
+                "fixture_only"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario"
+        }
+      },
+      "required": [
+        "entity_ids",
+        "as_of_date"
+      ],
+      "title": "ExposureRequest",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Task Id",
+      "type": "string"
+    },
+    "source_agent": {
+      "const": "orchestrator",
+      "title": "Source Agent",
+      "type": "string"
+    },
+    "target_agent": {
+      "const": "erp_agent",
+      "title": "Target Agent",
+      "type": "string"
+    },
+    "action": {
+      "const": "analyze_fx_exposure",
+      "title": "Action",
+      "type": "string"
+    },
+    "parameters": {
+      "$ref": "#/$defs/ExposureRequest"
+    }
+  },
+  "required": [
+    "task_id",
+    "source_agent",
+    "target_agent",
+    "action",
+    "parameters"
+  ],
+  "title": "TaskMessage",
+  "type": "object"
+}

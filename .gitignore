@@ -1,0 +1,13 @@
+.env
+.venv/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.db
+*.db-*
+data/source/*
+!data/source/.gitkeep
+data/profiling/
+.agents

@@ -1,0 +1,90 @@
+name: erp-agent-financebenchmark
+
+x-runtime-env: &runtime-env
+  APP_ENV: development
+  DATABASE_URL: mysql+pymysql://erp_app:${ERP_APP_PASSWORD:?set ERP_APP_PASSWORD}@db:3306/erp_demo?charset=utf8mb4
+  ERP_READ_DATABASE_URL: mysql+pymysql://erp_read:${ERP_READ_PASSWORD:?set ERP_READ_PASSWORD}@db:3306/erp_demo?charset=utf8mb4
+  DEMO_API_KEYS_JSON: ${DEMO_API_KEYS_JSON:?set DEMO_API_KEYS_JSON}
+  MCP_INTERNAL_TOKEN: ${MCP_INTERNAL_TOKEN:?set MCP_INTERNAL_TOKEN}
+  MCP_SERVER_URL: http://mcp:8001/mcp
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+
+x-erp-image: &erp-image
+  image: erp-agent-financebenchmark:1.0.0
+  build: .
+
+services:
+  db:
+    image: mysql:8.4
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_as_cs", "--default-time-zone=+00:00"]
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: erp_demo
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+  init:
+    <<: *erp-image
+    environment:
+      <<: *runtime-env
+      ERP_ADMIN_DATABASE_URL: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD}@db:3306/erp_demo?charset=utf8mb4
+      ERP_IMPORT_DATABASE_URL: mysql+pymysql://erp_importer:${ERP_IMPORTER_PASSWORD:?set ERP_IMPORTER_PASSWORD}@db:3306/erp_demo?charset=utf8mb4
+      DATASET_ZIP_PATH: /source/FO Benchmark_Data.zip
+      DEMO_SCENARIO: ${DEMO_SCENARIO:-aster-treasury-v1}
+      DEMO_SCENARIO_SEED: ${DEMO_SCENARIO_SEED:-113306018}
+      DEMO_AS_OF_DATE: ${DEMO_AS_OF_DATE:-2026-11-27}
+    volumes:
+      - ./data/source:/source:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["sh", "-ec", "alembic upgrade head && python scripts/provision_mysql_roles.py && python scripts/import_microsoft_dataset.py && python -m scripts.build_demo_scenario"]
+
+  mcp:
+    <<: *erp-image
+    environment:
+      <<: *runtime-env
+      KYRIBA_MODE: ${KYRIBA_MODE:-disabled}
+      KYRIBA_TOKEN_URL: ${KYRIBA_TOKEN_URL:-}
+      KYRIBA_BASE_URL: ${KYRIBA_BASE_URL:-}
+      KYRIBA_CLIENT_ID: ${KYRIBA_CLIENT_ID:-}
+      KYRIBA_CLIENT_SECRET: ${KYRIBA_CLIENT_SECRET:-}
+      KYRIBA_ENTITY_MAP: ${KYRIBA_ENTITY_MAP:-}
+      KYRIBA_TIMEOUT_SECONDS: ${KYRIBA_TIMEOUT_SECONDS:-5}
+      KYRIBA_RETRY_WAIT_SECONDS: ${KYRIBA_RETRY_WAIT_SECONDS:-5}
+      KYRIBA_PAGE_SIZE: ${KYRIBA_PAGE_SIZE:-100}
+      KYRIBA_MAX_PAGES: ${KYRIBA_MAX_PAGES:-10}
+    expose:
+      - "8001"
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    command: ["uvicorn", "erp_agent.mcp.server:app", "--host", "0.0.0.0", "--port", "8001"]
+
+  api:
+    <<: *erp-image
+    environment:
+      <<: *runtime-env
+      ENABLE_LLM_AGENT: ${ENABLE_LLM_AGENT:-false}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+      SESSION_DATABASE: /app/data/sessions.db
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      mcp:
+        condition: service_started
+    ports:
+      - "127.0.0.1:${ERP_API_PORT:-8000}:8000"
+    volumes:
+      - sessions:/app/data
+
+volumes:
+  mysqldata:
+  sessions:
