@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.2.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>ERP Agent 詳細架構</title>
+  <title>ERP Agent 詳細架構與資料血緣</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5194,17 +5194,17 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="藍圖 / 修訂 01"
            data-preset-badge-editorial="編輯風格 / 現場筆記">
         <div class="pulse-dot"></div>
-        <h1>ERP Agent 詳細架構</h1>
+        <h1>ERP Agent 詳細架構與資料血緣</h1>
       </div>
     </div>
 
-
+    <script id="archify-source-evidence-data" type="application/json">{"schemaVersion":1,"verified":true,"repository":{"url":"https://github.com/Adrian-Kao/agentic-erp","revision":"64937fd8efc6716ed182fc39c0274760ea7f5e10","shortRevision":"64937fd","label":"Adrian-Kao/agentic-erp","linkMode":"local-only"},"referenceCount":63,"nodes":{"mas":[{"path":"src/erp_agent/api/main.py","line":107,"endLine":131,"label":"REST 入口"},{"path":"src/erp_agent/api/main.py","line":159,"endLine":174,"label":"MAS 任務契約"},{"path":"src/erp_agent/api/dependencies.py","line":9,"endLine":24,"label":"呼叫者身分"}],"api":[{"path":"src/erp_agent/api/main.py","line":39,"endLine":61,"label":"API 程序與共用服務"},{"path":"src/erp_agent/api/main.py","line":117,"endLine":155,"label":"計算、報表與血緣"},{"path":"docker-compose.yml","line":70,"endLine":86,"label":"主機埠與啟動條件"}],"sessions":[{"path":"src/erp_agent/memory/session_store.py","line":10,"endLine":49,"label":"隔離與過期"},{"path":"docker-compose.yml","line":74,"endLine":86,"label":"Session 掛載設定"}],"skills":[{"path":"src/erp_agent/agent/skill_loader.py","line":21,"endLine":47,"label":"允許的 Skills 與路徑"},{"path":"src/erp_agent/agent/runtime.py","line":59,"endLine":68,"label":"依請求載入與組裝"}],"runtime":[{"path":"src/erp_agent/agent/runtime.py","line":44,"endLine":105,"label":"啟用條件、Skills 與模型"},{"path":"src/erp_agent/agent/runtime.py","line":150,"endLine":199,"label":"run 驗證與模型工具"},{"path":"src/erp_agent/agent/tool_allowlist.py","line":18,"endLine":76,"label":"請求級工具限制"}],"model":[{"path":"src/erp_agent/agent/runtime.py","line":92,"endLine":105,"label":"選擇注入模型或 OpenAI"},{"path":"src/erp_agent/agent/runtime.py","line":182,"endLine":199,"label":"模型設定與追蹤"}],"mcp":[{"path":"src/erp_agent/mcp/auth.py","line":21,"endLine":44,"label":"服務 Token 與 API Key"},{"path":"src/erp_agent/mcp/server.py","line":123,"endLine":188,"label":"具名帳務工具"},{"path":"src/erp_agent/mcp/server.py","line":256,"endLine":294,"label":"資源、提示與 HTTP 傳輸"}],"kyriba":[{"path":"src/erp_agent/mcp/server.py","line":190,"endLine":254,"label":"四個唯讀工具"},{"path":"src/erp_agent/kyriba/service.py","line":195,"endLine":251,"label":"映射、分頁及模式"},{"path":"src/erp_agent/kyriba/models.py","line":83,"endLine":128,"label":"Pydantic 回應契約"}],"kyriba-api":[{"path":"src/erp_agent/kyriba/settings.py","line":24,"endLine":55,"label":"環境設定與 Live 驗證"},{"path":"src/erp_agent/kyriba/client.py","line":186,"endLine":245,"label":"OAuth2、GET 與重試"},{"path":"src/erp_agent/kyriba/client.py","line":247,"endLine":303,"label":"超時、狀態碼及回應限制"}],"services":[{"path":"src/erp_agent/application/services.py","line":14,"endLine":30,"label":"接線與讀寫分離"},{"path":"src/erp_agent/application/exposure_service.py","line":30,"endLine":103,"label":"驗證、計算與保存"},{"path":"src/erp_agent/application/dataset_service.py","line":103,"endLine":151,"label":"列級血緣查詢"}],"fx":[{"path":"src/erp_agent/domain/cashflow_rules.py","line":27,"endLine":107,"label":"已過帳付款與帳務品質"},{"path":"src/erp_agent/domain/exposure_calculator.py","line":44,"endLine":128,"label":"淨曝險、逾期與狀態"},{"path":"src/erp_agent/domain/validation.py","line":7,"endLine":11,"label":"報表驗證"}],"repository":[{"path":"src/erp_agent/database/repository.py","line":188,"endLine":252,"label":"情境版本與法人範圍"},{"path":"src/erp_agent/database/repository.py","line":266,"endLine":316,"label":"付款與一致快照"},{"path":"src/erp_agent/database/engine.py","line":7,"endLine":28,"label":"MySQL REPEATABLE READ"}],"store":[{"path":"src/erp_agent/application/exposure_service.py","line":22,"endLine":59,"label":"租戶限制與冪等"},{"path":"src/erp_agent/application/exposure_service.py","line":73,"endLine":102,"label":"同交易保存與稽核"},{"path":"src/erp_agent/memory/run_store.py","line":27,"endLine":83,"label":"寫報表、明細與血緣"}],"ledger":[{"path":"src/erp_agent/database/tables.py","line":83,"endLine":153,"label":"帳務與付款表"},{"path":"src/erp_agent/database/dataset_tables.py","line":144,"endLine":194,"label":"情境版本與文件"},{"path":"src/erp_agent/database/repository.py","line":125,"endLine":163,"label":"目前情境與批次"}],"reports":[{"path":"src/erp_agent/database/tables.py","line":162,"endLine":213,"label":"報表、細項與 audit"},{"path":"src/erp_agent/database/dataset_tables.py","line":209,"endLine":215,"label":"run 來源關聯"},{"path":"scripts/provision_mysql_roles.py","line":44,"endLine":54,"label":"erp_app 表級授權"}],"source-data":[{"path":"src/erp_agent/database/dataset_tables.py","line":28,"endLine":75,"label":"批次與 Raw 表"},{"path":"src/erp_agent/database/dataset_tables.py","line":82,"endLine":143,"label":"Mapping、Canonical 與隔離"},{"path":"src/erp_agent/ingestion/load_mysql.py","line":200,"endLine":236,"label":"交易提交與來源指標"}],"db-grants":[{"path":"scripts/provision_mysql_roles.py","line":15,"endLine":54,"label":"四個不同帳號與權限"},{"path":"scripts/provision_mysql_roles.py","line":55,"endLine":72,"label":"建立帳號與授權"},{"path":"migrations/versions/0002_financebenchmark.py","line":5,"endLine":15,"label":"資料集遷移"}],"zip":[{"path":"src/erp_agent/ingestion/source_manifest.py","line":5,"endLine":39,"label":"官方版本與雜湊"},{"path":"scripts/fetch_microsoft_dataset.py","line":31,"endLine":61,"label":"下載與保留授權"},{"path":"docker-compose.yml","line":36,"endLine":47,"label":"來源唯讀掛載"}],"parser":[{"path":"src/erp_agent/ingestion/source_reader.py","line":82,"endLine":108,"label":"ZIP 安全與容量檢查"},{"path":"src/erp_agent/ingestion/source_reader.py","line":186,"endLine":284,"label":"CSV、XLSX 與固定版本"},{"path":"scripts/import_microsoft_dataset.py","line":26,"endLine":35,"label":"解析與盤點入口"}],"importer":[{"path":"scripts/import_microsoft_dataset.py","line":26,"endLine":35,"label":"erp_importer 連線"},{"path":"src/erp_agent/ingestion/load_mysql.py","line":74,"endLine":163,"label":"Raw、Canonical 與隔離"},{"path":"src/erp_agent/ingestion/load_mysql.py","line":168,"endLine":236,"label":"批次狀態與重複執行"}],"scenario":[{"path":"scripts/build_demo_scenario.py","line":20,"endLine":45,"label":"匯入角色與建立入口"},{"path":"src/erp_agent/ingestion/scenario_builder.py","line":99,"endLine":174,"label":"固定 seed 與帳務假設"},{"path":"src/erp_agent/ingestion/scenario_builder.py","line":316,"endLine":373,"label":"寫入帳務與啟用版本"}],"bootstrap":[{"path":"docker-compose.yml","line":32,"endLine":47,"label":"等待 MySQL 與初始化順序"},{"path":"migrations/env.py","line":8,"endLine":19,"label":"遷移連線"},{"path":"scripts/provision_mysql_roles.py","line":55,"endLine":72,"label":"root 建立帳號"}]}}</script>
     <script id="archify-i18n-data" type="application/json">{"locale":"zh-TW","messages":{"viewer.kind.frontend":"前端","viewer.kind.backend":"後端","viewer.kind.database":"資料庫","viewer.kind.cloud":"雲端服務","viewer.kind.security":"安全","viewer.kind.messagebus":"訊息匯流排","viewer.kind.external":"外部系統","viewer.kind.neutral":"中性","viewer.kind.node":"節點","viewer.kind.start":"開始","viewer.kind.active":"進行中","viewer.kind.waiting":"等待","viewer.kind.decision":"決策","viewer.kind.success":"成功","viewer.kind.failure":"失敗","viewer.toolbar.actions":"圖表操作","viewer.theme.toggle.title":"切換主題（T）","viewer.theme.toggle":"切換顏色主題","viewer.theme.dark":"深色","viewer.theme.light":"淺色","viewer.preset.choose.title":"選擇視覺風格（S 輪流切換）","viewer.preset.choose":"選擇視覺風格","viewer.preset.style":"風格","viewer.preset.menu":"視覺風格","viewer.preset.identity":"視覺識別","viewer.preset.cycles":"輪流切換","viewer.preset.classic":"經典","viewer.preset.classic.short":"經典","viewer.preset.classic.hint":"穩定的技術預設風格","viewer.preset.flow":"訊號流","viewer.preset.flow.short":"流動","viewer.preset.flow.hint":"突出動態流向","viewer.preset.blueprint":"藍圖","viewer.preset.blueprint.hint":"工程評審","viewer.preset.editorial":"編輯風格","viewer.preset.editorial.hint":"適合發布與上線說明","viewer.preset.badge.signalFlow":"訊號流","viewer.preset.badge.blueprint":"藍圖 / 修訂 01","viewer.preset.badge.editorial":"編輯風格 / 現場筆記","viewer.preset.badge.editorialPlate":"ARCHIFY / 圖版 04","viewer.preset.current":"目前視覺風格：{style}。選擇視覺風格","viewer.motion.live":"動態","viewer.motion.still":"靜態","viewer.motion.pause":"暫停動畫","viewer.motion.resume":"恢復動畫","viewer.motion.reduced":"已依「減少動態效果」設定暫停動畫","viewer.motion.hidden":"頁面隱藏時已暫停動畫","viewer.motion.yielding":"暫停動畫；目前讓給{owner}","viewer.motion.yielding.title":"動態預覽已開啟 · 目前讓給{owner}","viewer.owner.route":"路徑探測","viewer.owner.lens":"語意透鏡","viewer.owner.relationship":"關係預覽","viewer.owner.intent":"意圖追蹤","viewer.owner.focus":"語意聚焦","viewer.owner.legend":"圖例預覽","viewer.owner.reader":"讀者互動","viewer.present.enter":"進入簡報模式","viewer.present.enter.title":"簡報模式（F）","viewer.present.exit":"離開簡報模式","viewer.present.exit.title":"離開簡報模式（F 或 Escape）","viewer.present.present":"簡報","viewer.present.exit.label":"離開","viewer.export.button":"匯出","viewer.export.button.title":"匯出圖表（E）","viewer.export.diagram":"匯出圖表","viewer.export.menu":"匯出","viewer.export.subtitle":"方便攜帶、乾淨的輸出","viewer.export.share":"分享","viewer.export.shareCard":"分享卡片","viewer.export.routeShareCard":"路徑分享卡片","viewer.export.reachShareCard":"可達範圍分享卡片","viewer.export.copyDiagram":"複製圖表","viewer.export.clipboardPng":"複製 PNG 到剪貼簿","viewer.export.raster":"點陣圖","viewer.export.image":"圖片","viewer.export.lossless":"無損圖片","viewer.export.compact":"壓縮圖片","viewer.export.modern":"新式圖片格式","viewer.export.vectorMotion":"向量與動畫","viewer.export.vectorMotion.heading":"向量與動畫","viewer.export.editable":"可編輯向量圖","viewer.export.svg.auto":"SVG · 自動","viewer.export.svg.auto.hint":"跟隨頁面主題","viewer.export.svg.light":"SVG · 淺色","viewer.export.svg.light.hint":"一律淺色","viewer.export.svg.dark":"SVG · 深色","viewer.export.svg.dark.hint":"一律深色","viewer.export.motion6s":"6 秒動畫","viewer.export.unsupported":"目前瀏覽器不支援","viewer.export.clipboardUnsupported":"目前瀏覽器不支援寫入圖片剪貼簿","viewer.export.clipboardUnsupported.short":"此瀏覽器不支援寫入圖片剪貼簿。","viewer.export.motionUnavailable":"目前瀏覽器無法錄製動畫","viewer.export.webmUnavailable":"目前瀏覽器不支援 WebM","viewer.export.failed":"匯出失敗：{message}","viewer.export.unknownVariant":"未知的分享卡片類型：{variant}","viewer.export.routeRequired":"請先追蹤路徑，再匯出路徑分享卡片","viewer.export.reachRequired":"請先追蹤圖中的可達範圍，再匯出可達範圍分享卡片","viewer.export.unknown":"未知錯誤","viewer.export.routeFailed":"路徑分享卡片匯出失敗：{message}","viewer.export.reachFailed":"可達範圍分享卡片匯出失敗：{message}","viewer.export.copyFailed":"複製失敗：{message}","viewer.export.copiedPng":"已將 PNG 複製到剪貼簿","viewer.export.downloadedRoute":"已下載路徑分享卡片","viewer.export.downloadedReach":"已下載可達範圍分享卡片","viewer.export.downloadedWebm":"已下載 WebM","viewer.export.recording":"正在錄製 6 秒動畫…","viewer.export.card.routeSummary.one":"路徑：{source} → {target} · {count} 步","viewer.export.card.routeSummary.other":"路徑：{source} → {target} · {count} 步","viewer.export.card.reachSummary":"從{origin}開始的{direction} · {nodes} · {links} · 最多 {hops}","viewer.export.card.node.one":"{count} 個節點","viewer.export.card.node.other":"{count} 個節點","viewer.export.card.link.one":"{count} 條連線","viewer.export.card.link.other":"{count} 條連線","viewer.export.card.hop.one":"{count} 跳","viewer.export.card.hop.other":"{count} 跳","viewer.export.card.routeBadge":"ARCHIFY · 路徑 · {hops}","viewer.export.card.reachBadge":"ARCHIFY · {direction}可達範圍","viewer.export.direction.upstream":"上游","viewer.export.direction.downstream":"下游","viewer.export.error.canvasUnavailable":"無法為{label}使用畫布","viewer.export.error.contextUnavailable":"無法為{label}建立 2D 繪圖環境","viewer.export.error.toBlobUnavailable":"{label}無法使用 canvas.toBlob","viewer.export.error.toBlobNull":"{label}的 canvas.toBlob 未回傳資料","viewer.export.error.variantsCombined":"無法同時組合多種分享卡片類型","viewer.export.error.viewerState":"分享卡片匯出後無法移除暫時的檢視器狀態","viewer.export.error.routeState":"路徑卡片匯出無法安全保留已解析路徑","viewer.export.error.reachState":"可達範圍卡片匯出時無法安全保留圖中的可達範圍","viewer.export.error.webmRequirements":"WebM 動畫匯出需要追蹤動畫及瀏覽器 MediaRecorder 支援","viewer.export.error.mediaRecorder":"MediaRecorder 錄製失敗","viewer.export.error.emptyWebm":"MediaRecorder 產生了空的 WebM","viewer.export.error.webmBackground":"無法為 WebM 匯出載入 SVG 背景","viewer.guide.title":"探索這個系統","viewer.focus.selectedNodes":"已選擇 {count} 個節點","viewer.guide.eyebrow":"圖表指南","viewer.guide.close":"關閉圖表指南","viewer.guide.inspecting":"正在檢查編譯後的語意","viewer.guide.actions":"圖表探索操作","viewer.guide.find":"尋找任意節點","viewer.guide.find.hint":"搜尋標籤、職責、類型和穩定 ID。","viewer.guide.route":"追蹤路徑","viewer.guide.route.aria":"追蹤有向路徑","viewer.guide.route.hint":"查看兩個語意節點如何依圖中方向相連。","viewer.guide.map":"檢視完整系統","viewer.guide.map.hint":"開啟語意雷達，顯示即時可視範圍與穩定的節點位置。","viewer.guide.lens":"比較語意類型","viewer.guide.lens.hint":"統計各角色、顯示其流量，並比較圖中的直接連線。","viewer.guide.present":"進入簡報模式","viewer.guide.present.hint":"讓即時圖占滿畫面，不影響匯出結果。","viewer.guide.shortcuts":"其他鍵盤快速鍵","viewer.guide.shortcut.export":"匯出","viewer.guide.shortcut.theme":"主題","viewer.guide.shortcut.style":"風格","viewer.guide.shortcut.reset":"重設","viewer.guide.shortcut.zoomIn":"放大","viewer.guide.shortcut.zoomOut":"縮小","viewer.guide.shortcut.close":"關閉","viewer.guide.credit":"覺得好用？在 GitHub 給 Archify 點個 Star","viewer.guide.star":"Star","viewer.guide.facts":"{nodes} · {relationships}","viewer.guide.fact.node.one":"{count} 個語意節點","viewer.guide.fact.node.other":"{count} 個語意節點","viewer.guide.fact.relationship.one":"{count} 條關係","viewer.guide.fact.relationship.other":"{count} 條關係","viewer.guide.open":"開啟圖表指南","viewer.finder.title":"尋找節點","viewer.finder.close":"關閉節點尋找器","viewer.finder.placeholder":"搜尋標籤或 ID","viewer.finder.search":"搜尋圖表節點","viewer.finder.results":"圖表節點","viewer.finder.empty":"沒有符合的節點","viewer.finder.result.focus":"聚焦{label}","viewer.finder.result.routeStart":"選擇{label}作為路徑起點","viewer.finder.result.routeTarget":"選擇{label}作為路徑終點，{links}","viewer.finder.status.empty":"沒有符合的節點","viewer.finder.status.count.one":"{count} 個符合的節點","viewer.finder.status.count.other":"{count} 個符合的節點","viewer.finder.noun.nodes":"個節點","viewer.finder.link.one":"{count} 條連線","viewer.finder.link.other":"{count} 條連線","viewer.finder.result.focus.one":"聚焦{label}，{count} 條相關連線","viewer.finder.result.focus.other":"聚焦{label}，{count} 條相關連線","viewer.finder.status.filtered":"{visible}/{available} {noun}","viewer.finder.status.all":"{available} {noun}","viewer.passport.eyebrow":"語意護照","viewer.passport.metadata":"節點後設資料","viewer.passport.evidence":"已驗證的原始碼證據","viewer.passport.verified":"已驗證來源","viewer.passport.verificationScope":"已依固定版本驗證本機 Git，未檢查遠端存取權限。","viewer.passport.reach":"圖中可達範圍","viewer.passport.reach.trace":"追蹤圖中可達範圍","viewer.passport.upstream":"上游","viewer.passport.downstream":"下游","viewer.passport.upstream.trace":"追蹤上游可達範圍","viewer.passport.downstream.trace":"追蹤下游可達範圍","viewer.passport.close":"關閉語意護照","viewer.passport.move":"移動語意護照。可拖曳、用方向鍵移動，或按 Home 回到自動位置。","viewer.passport.copy":"複製連結","viewer.passport.copy.focus":"複製聚焦節點的連結","viewer.passport.relations":"關係","viewer.passport.relations.show":"顯示相連的關係","viewer.passport.relations.hide":"隱藏相連的關係","viewer.passport.relations.list":"相連的關係","viewer.passport.copyRelation":"複製關係","viewer.passport.copyNode":"複製節點","viewer.passport.copyPinned":"複製固定關係的連結","viewer.passport.copySource":"複製來源節點的連結","viewer.passport.copy.focused.success":"已複製聚焦節點連結","viewer.passport.copy.pinned.success":"已複製固定關係連結","viewer.passport.copy.focused.failed":"無法複製聚焦節點連結","viewer.passport.copy.pinned.failed":"無法複製固定關係連結","viewer.passport.relationship.none":"沒有相連的關係","viewer.passport.relationship.count.one":"{count} 條關係","viewer.passport.relationship.count.other":"{count} 條關係","viewer.passport.relationship.show.one":"顯示 {count} 條相連的關係","viewer.passport.relationship.show.other":"顯示 {count} 條相連的關係","viewer.passport.relationship.summary":"{out} 條出向 · {in} 條入向{loops}","viewer.passport.relationship.loops":" · {count} 條自環","viewer.passport.relationship.explorer":"直接關係瀏覽","viewer.passport.relationship.help":"使用方向鍵瀏覽關係。按 Enter 或空格鍵固定詳細資訊；按 Escape 清除。","viewer.passport.relationship.loopsBack":"回到自身","viewer.passport.relationship.connectsTo":"連到","viewer.passport.relationship.connectsFrom":"來自","viewer.passport.relationship.pinned":"已固定關係 · {from} → {to} · {label}","viewer.passport.relationship.inspect":"檢查第 {index}/{total} 條關係：{from} 到 {to}，{label}。按 Enter 檢視詳細資訊。","viewer.passport.relationship.group.out":"出向","viewer.passport.relationship.group.in":"入向","viewer.passport.relationship.group.loop":"自環","viewer.passport.relationship.row":"{group}：{relationship}，{neighbor}","viewer.passport.relationship.direction.out":"出 →","viewer.passport.relationship.direction.in":"← 入","viewer.passport.relationship.direction.loop":"自環","viewer.passport.sourceCount.one":"{count} 個已驗證來源引用","viewer.passport.sourceCount.other":"{count} 個已驗證來源引用","viewer.passport.repository.open":"開啟已驗證的儲存庫版本 {revision}","viewer.passport.source.open":"開啟版本 {revision} 中已驗證的來源 {path}","viewer.passport.source.openLink":"開啟 ↗","viewer.passport.reach.upstream.one":"追蹤 {count} 個上游節點","viewer.passport.reach.upstream.other":"追蹤 {count} 個上游節點","viewer.passport.reach.downstream.one":"追蹤 {count} 個下游節點","viewer.passport.reach.downstream.other":"追蹤 {count} 個下游節點","viewer.passport.reach.noUpstream":"沒有上游節點","viewer.passport.reach.noDownstream":"沒有下游節點","viewer.passport.reach.status":"{direction} · {nodes} 個節點 · {links} 條連線 · 最多 {hops} 跳","viewer.route.eyebrow":"路徑","viewer.route.start":"點選路徑的起點","viewer.route.start.find":"尋找起點","viewer.route.start.find.aria":"尋找路徑起點","viewer.route.copy":"複製連結","viewer.route.copy.aria":"複製已追蹤路徑的連結","viewer.route.clear":"清除","viewer.route.clear.aria":"清除路徑探測","viewer.route.traced":"路徑","viewer.route.pickTwo":"在圖上點兩個節點","viewer.route.pickOne":"在圖上點一個節點","viewer.route.controls":"路徑旅程控制","viewer.route.previous":"上一個路徑位置","viewer.route.play":"播放路徑旅程","viewer.route.pause":"暫停路徑旅程","viewer.route.replay":"重播路徑旅程","viewer.route.next":"下一個路徑位置","viewer.route.journey":"旅程","viewer.route.pause.label":"暫停","viewer.route.replay.label":"重播","viewer.route.overview":"總覽","viewer.route.overview.aria":"顯示完整路徑總覽","viewer.route.instructions":"先點起點，再點終點，沿箭頭方向找路。","viewer.route.destination":"從{label}出發，走到哪裡？","viewer.route.destination.find":"尋找目標","viewer.route.destination.find.aria":"尋找可達的路徑目標","viewer.route.differentDestination":"選擇其他目標","viewer.route.distinct":"請選兩個不同的節點。","viewer.route.unreachable":"走不到{label}","viewer.route.unreachable.detail":"沿箭頭方向，從{source}走不到{target}。請選一個標示出來的節點。","viewer.route.start.instructions":"接著選終點，能走到的節點會亮起。","viewer.route.copy.success":"已複製路徑連結","viewer.route.copy.failed":"無法複製路徑連結","viewer.route.position":"路徑位置 {index}/{total}：{label}","viewer.route.step":"第 {index}/{total} 步 · {phase} · {label}","viewer.route.motionRequired":"自動旅程需要動態模式","viewer.route.trigger.clear":"清除已追蹤路徑","viewer.route.overview.status":"{nodes} · {hops} · 最短路徑","viewer.route.overview.node.one":"{count} 個節點","viewer.route.overview.node.other":"{count} 個節點","viewer.route.overview.hop.one":"{count} 步","viewer.route.overview.hop.other":"{count} 步","viewer.route.phase.playing":"播放中","viewer.route.phase.complete":"已完成","viewer.route.phase.inspecting":"檢查中","viewer.route.destination.count.one":"已標示出 {count} 個能走到的節點，點一下。","viewer.route.destination.count.other":"已標示出 {count} 個能走到的節點，點其中一個。","viewer.route.noOutgoing":"這個節點沒有向外的箭頭。清除後換一個起點。","viewer.route.result.title":"{source} 到 {target}","viewer.route.finder.source.title":"選擇路徑起點","viewer.route.finder.source.placeholder":"搜尋路徑來源","viewer.route.finder.source.empty":"沒有符合的路徑來源","viewer.route.finder.source.results":"可作為路徑起點的節點","viewer.route.finder.source.noun":"個路徑來源","viewer.route.finder.source.badge":"起點","viewer.route.finder.target.title":"從{label}出發的目標","viewer.route.finder.target.placeholder":"搜尋可達目標","viewer.route.finder.target.empty":"沒有符合的可達目標","viewer.route.finder.target.results":"可達路徑目標","viewer.route.finder.target.noun":"個可達目標","viewer.route.hop.one":"{count} 跳","viewer.route.hop.other":"{count} 跳","viewer.lens.eyebrow":"語意透鏡","viewer.lens.title":"比較系統角色","viewer.lens.close":"關閉語意透鏡","viewer.lens.instruction":"最多選兩種語意類型。選一種會顯示它實際的流量；選兩種只比較兩者之間的直接關係。","viewer.lens.kinds":"語意類型","viewer.lens.choose":"選擇一種類型，檢查它的節點和相連的關係。","viewer.lens.copy":"複製語意透鏡連結","viewer.lens.clear":"清除語意透鏡","viewer.lens.open":"開啟語意透鏡","viewer.lens.openActive":"開啟目前語意透鏡","viewer.lens.legend":"語意圖例","viewer.lens.legend.inspect.one":"檢查{label}，{count} 個節點","viewer.lens.legend.inspect.other":"檢查{label}，{count} 個節點","viewer.lens.kind.count.one":"{label}，{count} 個節點","viewer.lens.kind.count.other":"{label}，{count} 個節點","viewer.lens.compare.one":"{first} → {second}：{forward} · {second} → {first}：{reverse} · 共 {count} 條直接關係","viewer.lens.compare.other":"{first} → {second}：{forward} · {second} → {first}：{reverse} · 共 {count} 條直接關係","viewer.lens.single":"{nodes} · {relationships} · 已連線節點保持可見","viewer.lens.node.one":"{count} 個{label}節點","viewer.lens.node.other":"{count} 個{label}節點","viewer.lens.relationship.one":"{count} 條相連關係","viewer.lens.relationship.other":"{count} 條相連關係","viewer.radar.title":"語意雷達","viewer.radar.building":"正在建立總覽","viewer.radar.openFull":"開啟完整語意雷達","viewer.radar.open":"開啟雷達","viewer.radar.close":"關閉語意雷達","viewer.radar.surface":"圖的總覽。點選節點以聚焦，或用方向鍵平移。","viewer.radar.click":"點選節點","viewer.radar.drag":"拖曳平移","viewer.radar.space":"語意雷達需要更多空間。","viewer.radar.nodes":"語意圖表雷達節點","viewer.radar.focus":"從語意雷達聚焦{label}","viewer.radar.status":"{count} 個節點 · {viewport}","viewer.radar.fullMap":"{count} 個節點 · 完整地圖","viewer.radar.compacted":"已縮小雷達，避免擋住語意護照或地圖控制項。","viewer.radar.cancelWaiting":"取消等待空間的語意雷達","viewer.radar.needsSpace":"語意雷達需要更多可見空間","viewer.radar.viewport.full":"完整地圖","viewer.radar.viewport.width":"寬度 {percent}%","viewer.radar.viewport.scale":"可視範圍 {percent}%","viewer.nav.controls":"圖表檢視控制","viewer.nav.route":"追蹤有向路徑","viewer.nav.route.title":"追蹤路徑（R）","viewer.nav.route.short":"路徑","viewer.nav.radar":"開啟語意雷達","viewer.nav.radar.title":"語意雷達（M）","viewer.nav.radar.short":"地圖","viewer.nav.lens":"開啟語意透鏡","viewer.nav.lens.title":"語意透鏡（L）","viewer.nav.lens.short":"透鏡","viewer.nav.find":"尋找節點","viewer.nav.find.title":"尋找節點（/）","viewer.outline.title":"節點索引","viewer.rail.show":"要點與索引","viewer.rail.controls":"側欄","viewer.rail.collapse":"收起側欄","viewer.rail.bottom":"移到圖下方","viewer.rail.right":"移到圖右側","viewer.nav.guide":"開啟圖表指南","viewer.nav.guide.title":"圖表指南（?）","viewer.nav.zoomOut":"縮小","viewer.nav.zoomOut.title":"縮小（-）","viewer.nav.reset":"重設圖表檢視","viewer.nav.reset.title":"重設檢視（0）","viewer.nav.read":"閱讀","viewer.nav.zoomIn":"放大","viewer.nav.zoomIn.title":"放大（+）","viewer.nav.camera":"{hint}。重設圖表檢視","viewer.nav.camera.title":"{semantic}{hint} · 重設檢視（0）","viewer.nav.camera.semantic":"語意鏡頭已開啟 · ","viewer.nav.level.map":"概覽","viewer.nav.level.read":"閱讀","viewer.nav.level.full":"完整","viewer.nav.level.auto":"自動","viewer.nav.detail.map":"放大以顯示關係標籤和節點脈絡","viewer.nav.detail.read":"再放大以顯示標記和註解","viewer.nav.detail.full":"完整細節","viewer.intent.summary":"{label}。{out} 條出向，{in} 條入向{loops}。共 {total} 條連線。按 Enter 檢視詳細資訊。","viewer.intent.loops":"，{count} 條自環","viewer.common.copied":"已複製","viewer.common.copyFailed":"複製失敗","viewer.common.copyLink":"複製連結","viewer.common.clear":"清除","viewer.common.close":"關閉"}}</script>
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / 圖版 04">
-      <svg viewBox="0 0 1192 1170" role="img" lang="zh-TW" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14">
-        <title id="archify-diagram-title">ERP Agent 詳細架構</title>
+      <svg viewBox="0 0 1185 1392" role="img" lang="zh-TW" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14">
+        <title id="archify-diagram-title">ERP Agent 詳細架構與資料血緣</title>
         <desc id="archify-diagram-description">由 Archify 產生的架構圖。</desc>
         <!-- Definitions -->
         <defs>
@@ -5250,377 +5250,470 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Boundaries (behind everything) -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="Compose API 程序與 Session Volume" x="328" y="16" width="514" height="266" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="Compose API 容器與 Session volume" x="323" y="16" width="507" height="263" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="1" data-composition-frame-label="Compose MCP 程序" x="633" y="401" width="519" height="106" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="1" data-composition-frame-label="Compose MCP 容器" x="618" y="366" width="527" height="108" rx="12" class="c-region" stroke-width="1"/>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="2" data-composition-frame-label="MySQL 8.4／erp_demo／mysqldata" x="321" y="896" width="511" height="428" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
         <g data-graph-role="automatic-crossover" style="--step:0">
-          <path data-graph-role="automatic-crossover-underlay" d="M 210 231 L 345 231" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="mas" data-edge-to="api" data-edge-label="JSON ＋ API Key" data-edge-key="0" data-edge-id="mas-to-api" data-composition-points="210,231;345,231" data-composition-crossover="halo" data-composition-independent="true" d="M 210 231 L 345 231" class="a-security" data-animate="edge" style="--step:0" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 218 227 L 340 227" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="mas" data-edge-to="api" data-edge-label="JSON ＋ API Key" data-edge-key="0" data-edge-id="mas-to-api" data-composition-points="218,227;340,227" data-composition-crossover="halo" data-composition-independent="true" d="M 218 227 L 340 227" class="a-security" data-animate="edge" style="--step:0" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:1">
-          <path data-graph-role="automatic-crossover-underlay" d="M 520 238 L 650 238" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="api" data-edge-to="runtime" data-edge-label="啟用後執行" data-edge-key="1" data-edge-id="api-to-runtime" data-composition-points="520,238;650,238" data-composition-crossover="halo" data-composition-independent="true" d="M 520 238 L 650 238" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 518 234 L 635 234" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="api" data-edge-to="runtime" data-edge-label="啟用 Agent" data-edge-key="1" data-edge-id="api-to-runtime" data-composition-points="518,234;635,234" data-composition-crossover="halo" data-composition-independent="true" d="M 518 234 L 635 234" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:2">
-          <path data-graph-role="automatic-crossover-underlay" d="M 737.5 200 L 737.5 102" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="runtime" data-edge-to="skills" data-edge-label="選取與讀取" data-edge-key="2" data-edge-id="runtime-to-skills" data-composition-points="737.5,200;737.5,102" data-composition-crossover="halo" data-composition-independent="true" d="M 737.5 200 L 737.5 102" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 724 195 L 724 104" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="runtime" data-edge-to="skills" data-edge-label="載入指引" data-edge-key="2" data-edge-id="runtime-to-skills" data-composition-points="724,195;724,104" data-composition-crossover="halo" data-composition-independent="true" d="M 724 195 L 724 104" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:3">
-          <path data-graph-role="automatic-crossover-underlay" d="M 650 224 L 634 224 Q 626 224 626 216 L 626 79 Q 626 71 618 71 L 520 71" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="runtime" data-edge-to="session" data-edge-label="讀寫最近 run" data-edge-key="3" data-edge-id="runtime-to-session" data-composition-points="650,224;626,224;626,71;520,71" data-composition-crossover="halo" data-composition-independent="true" d="M 650 224 L 634 224 Q 626 224 626 216 L 626 79 Q 626 71 618 71 L 520 71" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 635 220 L 619 220 Q 611 220 611 212 L 611 80 Q 611 72 603 72 L 518 72" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="runtime" data-edge-to="sessions" data-edge-label="讀寫 run ID" data-edge-key="3" data-edge-id="runtime-to-sessions" data-composition-points="635,220;611,220;611,72;518,72" data-composition-crossover="halo" data-composition-independent="true" d="M 635 220 L 619 220 Q 611 220 611 212 L 611 80 Q 611 72 603 72 L 518 72" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:4">
-          <path data-graph-role="automatic-crossover-underlay" d="M 825 231 L 965 231" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="runtime" data-edge-to="model" data-edge-label="配置後推理" data-edge-key="4" data-edge-id="runtime-to-model" data-composition-points="825,231;965,231" data-composition-crossover="halo" data-composition-independent="true" d="M 825 231 L 965 231" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 813 227 L 948 227" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="runtime" data-edge-to="model" data-edge-label="選用模型" data-edge-key="4" data-edge-id="runtime-to-model" data-composition-points="813,227;948,227" data-composition-crossover="halo" data-composition-independent="true" d="M 813 227 L 948 227" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:5">
-          <path data-graph-role="automatic-crossover-underlay" d="M 737.5 262 L 737.5 425" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="runtime" data-edge-to="mcp" data-edge-label="服務 Token ＋ API Key" data-edge-key="5" data-edge-id="runtime-to-mcp" data-composition-points="737.5,262;737.5,425" data-composition-crossover="halo" data-composition-independent="true" d="M 737.5 262 L 737.5 425" class="a-security" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 724 259 L 724 390" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="runtime" data-edge-to="mcp" data-edge-label="服務 Token ＋ API Key" data-edge-key="5" data-edge-id="runtime-to-mcp" data-composition-points="724,259;724,390" data-composition-crossover="halo" data-composition-independent="true" d="M 724 259 L 724 390" class="a-security" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:6">
-          <path data-graph-role="automatic-crossover-underlay" d="M 432.5 262 L 432.5 620" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="api" data-edge-to="services" data-edge-label="授權 REST" data-edge-key="6" data-edge-id="api-to-services" data-composition-points="432.5,262;432.5,620" data-composition-crossover="halo" data-composition-independent="true" d="M 432.5 262 L 432.5 620" class="a-emphasis" data-animate="edge" style="--step:6" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 429 259 L 429 580" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="api" data-edge-to="services" data-edge-label="REST／MAS" data-edge-key="6" data-edge-id="api-to-services" data-composition-points="429,259;429,580" data-composition-crossover="halo" data-composition-independent="true" d="M 429 259 L 429 580" class="a-emphasis" data-animate="edge" style="--step:6" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
-          <path data-graph-role="automatic-crossover-underlay" d="M 650 471 L 512 471 Q 504 471 504 479 L 504 620" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="mcp" data-edge-to="services" data-edge-label="授權工具呼叫" data-edge-key="7" data-edge-id="mcp-to-services" data-composition-points="650,471;504,471;504,620" data-composition-crossover="halo" data-composition-independent="true" d="M 650 471 L 512 471 Q 504 471 504 479 L 504 620" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 635 422 L 453.1 422 Q 445.1 422 445.1 430 L 445.1 580" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="mcp" data-edge-to="services" data-edge-label="具名工具" data-edge-key="7" data-edge-id="mcp-to-services" data-composition-points="635,422;445.1,422;445.1,580" data-composition-crossover="halo" data-composition-independent="true" d="M 635 422 L 453.1 422 Q 445.1 422 445.1 430 L 445.1 580" class="a-emphasis" data-animate="edge" style="--step:7" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
-          <path data-graph-role="automatic-crossover-underlay" d="M 825 456 L 965 456" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="mcp" data-edge-to="kyriba" data-edge-label="啟用後註冊" data-edge-key="8" data-edge-id="mcp-to-kyriba" data-composition-points="825,456;965,456" data-composition-crossover="halo" data-composition-independent="true" d="M 825 456 L 965 456" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 813 422 L 948 422" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="mcp" data-edge-to="kyriba" data-edge-label="選用唯讀工具" data-edge-key="8" data-edge-id="mcp-to-kyriba" data-composition-points="813,422;948,422" data-composition-crossover="halo" data-composition-independent="true" d="M 813 422 L 948 422" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:9">
-          <path data-graph-role="automatic-crossover-underlay" d="M 1050 487 L 1050 620" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="kyriba" data-edge-to="kyriba-remote" data-edge-label="Live OAuth2／GET" data-edge-key="9" data-edge-id="kyriba-to-kyriba-remote" data-composition-points="1050,487;1050,620" data-composition-crossover="halo" data-composition-independent="true" d="M 1050 487 L 1050 620" class="a-security" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 1038 454 L 1038 580" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="kyriba" data-edge-to="kyriba-api" data-edge-label="Live OAuth2／GET" data-edge-key="9" data-edge-id="kyriba-to-kyriba-api" data-composition-points="1038,454;1038,580" data-composition-crossover="halo" data-composition-independent="true" d="M 1038 454 L 1038 580" class="a-security" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:10">
-          <path data-graph-role="automatic-crossover-underlay" d="M 345 651 L 210 651" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="services" data-edge-to="domain" data-edge-label="驗證並計算" data-edge-key="10" data-edge-id="services-to-domain" data-composition-points="345,651;210,651" data-composition-crossover="halo" data-composition-independent="true" d="M 345 651 L 210 651" class="a-emphasis" data-animate="edge" style="--step:10" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 340 612 L 218 612" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="services" data-edge-to="fx" data-edge-label="驗證並計算" data-edge-key="10" data-edge-id="services-to-fx" data-composition-points="340,612;218,612" data-composition-crossover="halo" data-composition-independent="true" d="M 340 612 L 218 612" class="a-emphasis" data-animate="edge" style="--step:10" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:11">
-          <path data-graph-role="automatic-crossover-underlay" d="M 432.5 682 L 432.5 830" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="services" data-edge-to="query" data-edge-label="租戶與法人範圍" data-edge-key="11" data-edge-id="services-to-query" data-composition-points="432.5,682;432.5,830" data-composition-crossover="halo" data-composition-independent="true" d="M 432.5 682 L 432.5 830" class="a-security" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 429 644 L 429 810" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="services" data-edge-to="repository" data-edge-label="租戶／法人／情境" data-edge-key="11" data-edge-id="services-to-repository" data-composition-points="429,644;429,810" data-composition-crossover="halo" data-composition-independent="true" d="M 429 644 L 429 810" class="a-security" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:12">
-          <path data-graph-role="automatic-crossover-underlay" d="M 520 658 L 650 658" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="services" data-edge-to="run-store" data-edge-label="讀寫正式報表" data-edge-key="12" data-edge-id="services-to-run-store" data-composition-points="520,658;650,658" data-composition-crossover="halo" data-composition-independent="true" d="M 520 658 L 650 658" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 518 621.1 L 635 621.1" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="services" data-edge-to="store" data-edge-label="保存／重查 run" data-edge-key="12" data-edge-id="services-to-store" data-composition-points="518,621.1;635,621.1" data-composition-crossover="halo" data-composition-independent="true" d="M 518 621.1 L 635 621.1" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:13">
-          <path data-graph-role="automatic-crossover-underlay" d="M 504 892 L 504 1048 Q 504 1056 512 1056 L 535 1056" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="query" data-edge-to="mysql" data-edge-label="唯讀交易" data-edge-key="13" data-edge-id="query-to-mysql" data-composition-points="504,892;504,1056;535,1056" data-composition-crossover="halo" data-composition-independent="true" d="M 504 892 L 504 1048 Q 504 1056 512 1056 L 535 1056" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 429 874 L 429 1060" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="repository" data-edge-to="ledger" data-edge-label="erp_read · SELECT" data-edge-key="13" data-edge-id="repository-to-ledger" data-composition-points="429,874;429,1060" data-composition-crossover="halo" data-composition-independent="true" d="M 429 874 L 429 1060" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:14">
-          <path data-graph-role="automatic-crossover-underlay" d="M 697 682 L 697 1040" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="run-store" data-edge-to="mysql" data-edge-label="報表／稽核讀寫" data-edge-key="14" data-edge-id="run-store-to-mysql" data-composition-points="697,682;697,1040" data-composition-crossover="halo" data-composition-independent="true" d="M 697 682 L 697 1040" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 724 644 L 724 920" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="store" data-edge-to="reports" data-edge-label="erp_app · SELECT／INSERT" data-edge-key="14" data-edge-id="store-to-reports" data-composition-points="724,644;724,920" data-composition-crossover="halo" data-composition-independent="true" d="M 724 644 L 724 920" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:15">
-          <path data-graph-role="automatic-crossover-underlay" d="M 125 892 L 125 1040" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="ms-zip" data-edge-to="importer" data-edge-label="掛載唯讀 ZIP" data-edge-key="15" data-edge-id="ms-zip-to-importer" data-composition-points="125,892;125,1040" data-composition-crossover="halo" data-composition-independent="true" d="M 125 892 L 125 1040" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 129 824 L 129 920" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="zip" data-edge-to="parser" data-edge-label="唯讀掛載" data-edge-key="15" data-edge-id="zip-to-parser" data-composition-points="129,824;129,920" data-composition-crossover="halo" data-composition-independent="true" d="M 129 824 L 129 920" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:16">
-          <path data-graph-role="automatic-crossover-underlay" d="M 210 1071 L 535 1071" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="importer" data-edge-to="mysql" data-edge-label="寫入 Raw／Canonical" data-edge-key="16" data-edge-id="importer-to-mysql" data-composition-points="210,1071;535,1071" data-composition-crossover="halo" data-composition-independent="true" d="M 210 1071 L 535 1071" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 129 984 L 129 1240" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="parser" data-edge-to="importer" data-edge-label="欄位與列" data-edge-key="16" data-edge-id="parser-to-importer" data-composition-points="129,984;129,1240" data-composition-crossover="halo" data-composition-independent="true" d="M 129 984 L 129 1240" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:17">
-          <path data-graph-role="automatic-crossover-underlay" d="M 965 1071 L 713 1071" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="scenario" data-edge-to="mysql" data-edge-label="讀日記帳、寫情境" data-edge-key="17" data-edge-id="scenario-to-mysql" data-composition-points="965,1071;713,1071" data-composition-crossover="halo" data-composition-independent="true" d="M 965 1071 L 713 1071" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 218 1272 L 340 1272" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="importer" data-edge-to="source-data" data-edge-label="erp_importer · 寫來源" data-edge-key="17" data-edge-id="importer-to-source-data" data-composition-points="218,1272;340,1272" data-composition-crossover="halo" data-composition-independent="true" d="M 218 1272 L 340 1272" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        </g>
+        <g data-graph-role="automatic-crossover" style="--step:18">
+          <path data-graph-role="automatic-crossover-underlay" d="M 948 1099 L 550 1099 Q 542 1099 542 1107 L 542 1264 Q 542 1272 534 1272 L 518 1272" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="scenario" data-edge-to="source-data" data-edge-label="讀 Canonical" data-edge-key="18" data-edge-id="scenario-to-source-data" data-composition-points="948,1099;542,1099;542,1272;518,1272" data-composition-crossover="halo" data-composition-independent="true" d="M 948 1099 L 550 1099 Q 542 1099 542 1107 L 542 1264 Q 542 1272 534 1272 L 518 1272" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        </g>
+        <g data-graph-role="automatic-crossover" style="--step:19">
+          <path data-graph-role="automatic-crossover-underlay" d="M 948 1085 L 518 1085" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="scenario" data-edge-to="ledger" data-edge-label="erp_importer · 寫帳務" data-edge-key="19" data-edge-id="scenario-to-ledger" data-composition-points="948,1085;518,1085" data-composition-crossover="halo" data-composition-independent="true" d="M 948 1085 L 518 1085" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        </g>
+        <g data-graph-role="automatic-crossover" style="--step:20">
+          <path data-graph-role="automatic-crossover-underlay" d="M 948 1272 L 813 1272" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="bootstrap" data-edge-to="db-grants" data-edge-label="root · DDL／GRANT" data-edge-key="20" data-edge-id="bootstrap-to-db-grants" data-composition-points="948,1272;813,1272" data-composition-crossover="halo" data-composition-independent="true" d="M 948 1272 L 813 1272" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
 
         <!-- Components -->
-        <g id="node-mas" data-node-id="mas" data-node-label="MAS／API 呼叫端" tabindex="0" role="button" aria-label="聚焦MAS／API 呼叫端，Orchestrator・Strategy Agent, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="Orchestrator・Strategy Agent" data-node-context="架構元件">
-          <title>MAS／API 呼叫端 · Orchestrator・Strategy Agent · 架構元件</title>
-          <rect x="40" y="200" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="40" y="200" width="170" height="62" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 206) scale(0.6875)">
+        <g id="node-mas" data-node-id="mas" data-node-label="MAS／API 呼叫端" tabindex="0" role="button" aria-label="聚焦MAS／API 呼叫端，Swagger・Service Principal, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="Swagger・Service Principal" data-node-context="架構元件">
+          <title>MAS／API 呼叫端 · Swagger・Service Principal · 架構元件</title>
+          <rect x="40" y="195" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="40" y="195" width="178" height="64" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 201) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="125" y="229" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MAS／API 呼叫端</text>
-        <text data-detail="context" x="125" y="245" class="t-muted" font-size="9" text-anchor="middle">Orchestrator・Strategy Agent</text>
+          <text data-node-label="" data-detail-anchor="" x="129" y="225" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MAS／API 呼叫端</text>
+        <text data-detail="context" x="129" y="241" class="t-muted" font-size="9" text-anchor="middle">Swagger・Service Principal</text>
         </g>
 
-        <g id="node-api" data-node-id="api" data-node-label="FastAPI" tabindex="0" role="button" aria-label="聚焦FastAPI，REST・MAS 合約・OpenAPI, Compose API 程序與 Session Volume" aria-pressed="false" data-node-kind="backend" data-node-sublabel="REST・MAS 合約・OpenAPI" data-node-context="Compose API 程序與 Session Volume">
-          <title>FastAPI · REST・MAS 合約・OpenAPI · Compose API 程序與 Session Volume</title>
-          <rect x="345" y="200" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="345" y="200" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(351 206) scale(0.6875)">
+        <g id="node-api" data-node-id="api" data-node-label="FastAPI" tabindex="0" role="button" aria-label="聚焦FastAPI，Pydantic・REST・OpenAPI, Compose API 容器與 Session volume" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Pydantic・REST・OpenAPI" data-node-context="Compose API 容器與 Session volume">
+          <title>FastAPI · Pydantic・REST・OpenAPI · Compose API 容器與 Session volume</title>
+          <rect x="340" y="195" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="340" y="195" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(346 201) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="432.5" y="229" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">FastAPI</text>
-        <text data-detail="context" x="432.5" y="245" class="t-muted" font-size="9" text-anchor="middle">REST・MAS 合約・OpenAPI</text>
+          <text data-node-label="" data-detail-anchor="" x="429" y="225" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">FastAPI</text>
+        <text data-detail="context" x="429" y="241" class="t-muted" font-size="9" text-anchor="middle">Pydantic・REST・OpenAPI</text>
         </g>
 
-        <g id="node-skills" data-node-id="skills" data-node-label="Skills 載入" tabindex="0" role="button" aria-label="聚焦Skills 載入，曝險分析・資料品質, Compose API 程序與 Session Volume" aria-pressed="false" data-node-kind="backend" data-node-sublabel="曝險分析・資料品質" data-node-context="Compose API 程序與 Session Volume">
-          <title>Skills 載入 · 曝險分析・資料品質 · Compose API 程序與 Session Volume</title>
-          <rect x="650" y="40" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="650" y="40" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(656 46) scale(0.6875)">
-            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="737.5" y="69" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Skills 載入</text>
-        <text data-detail="context" x="737.5" y="85" class="t-muted" font-size="9" text-anchor="middle">曝險分析・資料品質</text>
-        </g>
-
-        <g id="node-session" data-node-id="session" data-node-label="Session Memory" tabindex="0" role="button" aria-label="聚焦Session Memory，SQLite・24 小時 TTL, Compose API 程序與 Session Volume" aria-pressed="false" data-node-kind="database" data-node-sublabel="SQLite・24 小時 TTL" data-node-context="Compose API 程序與 Session Volume">
-          <title>Session Memory · SQLite・24 小時 TTL · Compose API 程序與 Session Volume</title>
-          <rect x="345" y="40" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="345" y="40" width="175" height="62" rx="8" class="c-database" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(351 46) scale(0.6875)">
+        <g id="node-sessions" data-node-id="sessions" data-node-label="SQLite Session" tabindex="0" role="button" aria-label="聚焦SQLite Session，最近 run ID・24 小時 TTL, Compose API 容器與 Session volume" aria-pressed="false" data-node-kind="database" data-node-sublabel="最近 run ID・24 小時 TTL" data-node-context="Compose API 容器與 Session volume">
+          <title>SQLite Session · 最近 run ID・24 小時 TTL · Compose API 容器與 Session volume</title>
+          <rect x="340" y="40" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="340" y="40" width="178" height="64" rx="8" class="c-database" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(346 46) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="432.5" y="69" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Session Memory</text>
-        <text data-detail="context" x="432.5" y="85" class="t-muted" font-size="9" text-anchor="middle">SQLite・24 小時 TTL</text>
+          <text data-node-label="" data-detail-anchor="" x="429" y="70" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">SQLite Session</text>
+        <text data-detail="context" x="429" y="86" class="t-muted" font-size="9" text-anchor="middle">最近 run ID・24 小時 TTL</text>
         </g>
 
-        <g id="node-runtime" data-node-id="runtime" data-node-label="Agent Runtime" tabindex="0" role="button" aria-label="聚焦Agent Runtime，Agents SDK・工具白名單, Compose API 程序與 Session Volume" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Agents SDK・工具白名單" data-node-context="Compose API 程序與 Session Volume">
-          <title>Agent Runtime · Agents SDK・工具白名單 · Compose API 程序與 Session Volume</title>
-          <rect x="650" y="200" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="650" y="200" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(656 206) scale(0.6875)">
+        <g id="node-skills" data-node-id="skills" data-node-label="Skills Registry" tabindex="0" role="button" aria-label="聚焦Skills Registry，曝險分析・ERP 資料品質, Compose API 容器與 Session volume" aria-pressed="false" data-node-kind="backend" data-node-sublabel="曝險分析・ERP 資料品質" data-node-context="Compose API 容器與 Session volume">
+          <title>Skills Registry · 曝險分析・ERP 資料品質 · Compose API 容器與 Session volume</title>
+          <rect x="635" y="40" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="635" y="40" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(641 46) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="737.5" y="229" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Agent Runtime</text>
-        <text data-detail="context" x="737.5" y="245" class="t-muted" font-size="9" text-anchor="middle">Agents SDK・工具白名單</text>
+          <text data-node-label="" data-detail-anchor="" x="724" y="70" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Skills Registry</text>
+        <text data-detail="context" x="724" y="86" class="t-muted" font-size="9" text-anchor="middle">曝險分析・ERP 資料品質</text>
         </g>
 
-        <g id="node-model" data-node-id="model" data-node-label="OpenAI Responses" tabindex="0" role="button" aria-label="聚焦OpenAI Responses，選用・需模型設定, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="選用・需模型設定" data-node-context="架構元件">
-          <title>OpenAI Responses · 選用・需模型設定 · 架構元件</title>
-          <rect x="965" y="200" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="965" y="200" width="170" height="62" rx="8" class="c-external" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(971 206) scale(0.6875)">
+        <g id="node-runtime" data-node-id="runtime" data-node-label="Agent Runtime" tabindex="0" role="button" aria-label="聚焦Agent Runtime，Agents SDK・工具白名單, Compose API 容器與 Session volume" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Agents SDK・工具白名單" data-node-context="Compose API 容器與 Session volume">
+          <title>Agent Runtime · Agents SDK・工具白名單 · Compose API 容器與 Session volume</title>
+          <rect x="635" y="195" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="635" y="195" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(641 201) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="724" y="225" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Agent Runtime</text>
+        <text data-detail="context" x="724" y="241" class="t-muted" font-size="9" text-anchor="middle">Agents SDK・工具白名單</text>
+        </g>
+
+        <g id="node-model" data-node-id="model" data-node-label="OpenAI Responses" tabindex="0" role="button" aria-label="聚焦OpenAI Responses，選用・測試可注入 Fake Model, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="選用・測試可注入 Fake Model" data-node-context="架構元件">
+          <title>OpenAI Responses · 選用・測試可注入 Fake Model · 架構元件</title>
+          <rect x="948" y="195" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="948" y="195" width="180" height="64" rx="8" class="c-external" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(954 201) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1050" y="229" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">OpenAI Responses</text>
-        <text data-detail="context" x="1050" y="245" class="t-muted" font-size="9" text-anchor="middle">選用・需模型設定</text>
+          <text data-node-label="" data-detail-anchor="" x="1038" y="225" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">OpenAI Responses</text>
+        <text data-detail="context" x="1038" y="241" class="t-muted" font-size="9" text-anchor="middle">選用・測試可注入 Fake Model</text>
         </g>
 
-        <g id="node-mcp" data-node-id="mcp" data-node-label="MCP Server" tabindex="0" role="button" aria-label="聚焦MCP Server，Streamable HTTP・具名工具, Compose MCP 程序" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Streamable HTTP・具名工具" data-node-context="Compose MCP 程序">
-          <title>MCP Server · Streamable HTTP・具名工具 · Compose MCP 程序</title>
-          <rect x="650" y="425" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="650" y="425" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(656 431) scale(0.6875)">
+        <g id="node-mcp" data-node-id="mcp" data-node-label="MCP Server" tabindex="0" role="button" aria-label="聚焦MCP Server，Stateless Streamable HTTP, Compose MCP 容器" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Stateless Streamable HTTP" data-node-context="Compose MCP 容器">
+          <title>MCP Server · Stateless Streamable HTTP · Compose MCP 容器</title>
+          <rect x="635" y="390" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="635" y="390" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(641 396) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="737.5" y="454" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MCP Server</text>
-        <text data-detail="context" x="737.5" y="470" class="t-muted" font-size="9" text-anchor="middle">Streamable HTTP・具名工具</text>
+          <text data-node-label="" data-detail-anchor="" x="724" y="420" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MCP Server</text>
+        <text data-detail="context" x="724" y="436" class="t-muted" font-size="9" text-anchor="middle">Stateless Streamable HTTP</text>
         </g>
 
-        <g id="node-kyriba" data-node-id="kyriba" data-node-label="Kyriba 唯讀適配器" tabindex="0" role="button" aria-label="聚焦Kyriba 唯讀適配器，停用／Mock／Live, Compose MCP 程序" aria-pressed="false" data-node-kind="backend" data-node-sublabel="停用／Mock／Live" data-node-context="Compose MCP 程序">
-          <title>Kyriba 唯讀適配器 · 停用／Mock／Live · Compose MCP 程序</title>
-          <rect x="965" y="425" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="965" y="425" width="170" height="62" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(971 431) scale(0.6875)">
+        <g id="node-kyriba" data-node-id="kyriba" data-node-label="Kyriba 唯讀適配器" tabindex="0" role="button" aria-label="聚焦Kyriba 唯讀適配器，Disabled／Mock／Live, Compose MCP 容器" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Disabled／Mock／Live" data-node-context="Compose MCP 容器">
+          <title>Kyriba 唯讀適配器 · Disabled／Mock／Live · Compose MCP 容器</title>
+          <rect x="948" y="390" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="948" y="390" width="180" height="64" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(954 396) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1050" y="454" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Kyriba 唯讀適配器</text>
-        <text data-detail="context" x="1050" y="470" class="t-muted" font-size="9" text-anchor="middle">停用／Mock／Live</text>
+          <text data-node-label="" data-detail-anchor="" x="1038" y="420" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Kyriba 唯讀適配器</text>
+        <text data-detail="context" x="1038" y="436" class="t-muted" font-size="9" text-anchor="middle">Disabled／Mock／Live</text>
         </g>
 
-        <g id="node-kyriba-remote" data-node-id="kyriba-remote" data-node-label="Kyriba API" tabindex="0" role="button" aria-label="聚焦Kyriba API，Token URL・Base URL 由設定提供, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="Token URL・Base URL 由設定提供" data-node-context="架構元件">
-          <title>Kyriba API · Token URL・Base URL 由設定提供 · 架構元件</title>
-          <rect x="965" y="620" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="965" y="620" width="170" height="62" rx="8" class="c-external" data-animate="node" style="--step:10" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(971 626) scale(0.6875)">
+        <g id="node-kyriba-api" data-node-id="kyriba-api" data-node-label="Kyriba API" tabindex="0" role="button" aria-label="聚焦Kyriba API，環境提供 Token URL 與 Base URL, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="環境提供 Token URL 與 Base URL" data-node-context="架構元件">
+          <title>Kyriba API · 環境提供 Token URL 與 Base URL · 架構元件</title>
+          <rect x="948" y="580" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="948" y="580" width="180" height="64" rx="8" class="c-external" data-animate="node" style="--step:10" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(954 586) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1050" y="649" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Kyriba API</text>
-        <text data-detail="context" x="1050" y="665" class="t-muted" font-size="9" text-anchor="middle">Token URL・Base URL 由設定提供</text>
+          <text data-node-label="" data-detail-anchor="" x="1038" y="610" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Kyriba API</text>
+        <text data-detail="context" x="1038" y="626" class="t-muted" font-size="9" text-anchor="middle">環境提供 Token URL 與 Base URL</text>
         </g>
 
-        <g id="node-services" data-node-id="services" data-node-label="共用應用服務" tabindex="0" role="button" aria-label="聚焦共用應用服務，曝險・具名查詢・資料集, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="曝險・具名查詢・資料集" data-node-context="架構元件">
-          <title>共用應用服務 · 曝險・具名查詢・資料集 · 架構元件</title>
-          <rect x="345" y="620" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="345" y="620" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(351 626) scale(0.6875)">
+        <g id="node-services" data-node-id="services" data-node-label="共用應用服務" tabindex="0" role="button" aria-label="聚焦共用應用服務，Exposure・Query・Dataset, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Exposure・Query・Dataset" data-node-context="架構元件">
+          <title>共用應用服務 · Exposure・Query・Dataset · 架構元件</title>
+          <rect x="340" y="580" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="340" y="580" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(346 586) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="432.5" y="649" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">共用應用服務</text>
-        <text data-detail="context" x="432.5" y="665" class="t-muted" font-size="9" text-anchor="middle">曝險・具名查詢・資料集</text>
+          <text data-node-label="" data-detail-anchor="" x="429" y="610" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">共用應用服務</text>
+        <text data-detail="context" x="429" y="626" class="t-muted" font-size="9" text-anchor="middle">Exposure・Query・Dataset</text>
         </g>
 
-        <g id="node-domain" data-node-id="domain" data-node-label="財務規則與計算" tabindex="0" role="button" aria-label="聚焦財務規則與計算，Decimal・資料品質・到期分桶, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Decimal・資料品質・到期分桶" data-node-context="架構元件">
-          <title>財務規則與計算 · Decimal・資料品質・到期分桶 · 架構元件</title>
-          <rect x="40" y="620" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="40" y="620" width="170" height="62" rx="8" class="c-backend" data-animate="node" style="--step:11" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 626) scale(0.6875)">
+        <g id="node-fx" data-node-id="fx" data-node-label="財務規則與曝險" tabindex="0" role="button" aria-label="聚焦財務規則與曝險，Decimal・到期分桶・品質, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Decimal・到期分桶・品質" data-node-context="架構元件">
+          <title>財務規則與曝險 · Decimal・到期分桶・品質 · 架構元件</title>
+          <rect x="40" y="580" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="40" y="580" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:11" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 586) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="125" y="649" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">財務規則與計算</text>
-        <text data-detail="context" x="125" y="665" class="t-muted" font-size="9" text-anchor="middle">Decimal・資料品質・到期分桶</text>
+          <text data-node-label="" data-detail-anchor="" x="129" y="610" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">財務規則與曝險</text>
+        <text data-detail="context" x="129" y="626" class="t-muted" font-size="9" text-anchor="middle">Decimal・到期分桶・品質</text>
         </g>
 
-        <g id="node-query" data-node-id="query" data-node-label="ERP 唯讀 Repository" tabindex="0" role="button" aria-label="聚焦ERP 唯讀 Repository，SQLAlchemy Core・授權快照, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="SQLAlchemy Core・授權快照" data-node-context="架構元件">
+        <g id="node-repository" data-node-id="repository" data-node-label="ERP 唯讀 Repository" tabindex="0" role="button" aria-label="聚焦ERP 唯讀 Repository，SQLAlchemy Core・授權快照, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="SQLAlchemy Core・授權快照" data-node-context="架構元件">
           <title>ERP 唯讀 Repository · SQLAlchemy Core・授權快照 · 架構元件</title>
-          <rect x="345" y="830" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="345" y="830" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(351 836) scale(0.6875)">
+          <rect x="340" y="810" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="340" y="810" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(346 816) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="432.5" y="859" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ERP 唯讀 Repository</text>
-        <text data-detail="context" x="432.5" y="875" class="t-muted" font-size="9" text-anchor="middle">SQLAlchemy Core・授權快照</text>
+          <text data-node-label="" data-detail-anchor="" x="429" y="840" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ERP 唯讀 Repository</text>
+        <text data-detail="context" x="429" y="856" class="t-muted" font-size="9" text-anchor="middle">SQLAlchemy Core・授權快照</text>
         </g>
 
-        <g id="node-run-store" data-node-id="run-store" data-node-label="RunStore／稽核" tabindex="0" role="button" aria-label="聚焦RunStore／稽核，報表・明細・run 血緣, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="報表・明細・run 血緣" data-node-context="架構元件">
-          <title>RunStore／稽核 · 報表・明細・run 血緣 · 架構元件</title>
-          <rect x="650" y="620" width="175" height="62" rx="8" class="c-mask"/>
-          <rect x="650" y="620" width="175" height="62" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(656 626) scale(0.6875)">
+        <g id="node-store" data-node-id="store" data-node-label="RunStore／稽核" tabindex="0" role="button" aria-label="聚焦RunStore／稽核，冪等重送・正式報表重查, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="冪等重送・正式報表重查" data-node-context="架構元件">
+          <title>RunStore／稽核 · 冪等重送・正式報表重查 · 架構元件</title>
+          <rect x="635" y="580" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="635" y="580" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(641 586) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="737.5" y="649" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RunStore／稽核</text>
-        <text data-detail="context" x="737.5" y="665" class="t-muted" font-size="9" text-anchor="middle">報表・明細・run 血緣</text>
+          <text data-node-label="" data-detail-anchor="" x="724" y="610" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RunStore／稽核</text>
+        <text data-detail="context" x="724" y="626" class="t-muted" font-size="9" text-anchor="middle">冪等重送・正式報表重查</text>
         </g>
 
-        <g id="node-mysql" data-node-id="mysql" data-node-label="MySQL 8.4" tabindex="0" role="button" aria-label="聚焦MySQL 8.4，InnoDB・三層資料・報表, 架構元件" aria-pressed="false" data-node-kind="database" data-node-sublabel="InnoDB・三層資料・報表" data-node-context="架構元件">
-          <title>MySQL 8.4 · InnoDB・三層資料・報表 · 架構元件</title>
-          <rect x="535" y="1040" width="178" height="62" rx="8" class="c-mask"/>
-          <rect x="535" y="1040" width="178" height="62" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(541 1046) scale(0.6875)">
+        <g id="node-ledger" data-node-id="ledger" data-node-label="ERP 帳務與情境" tabindex="0" role="button" aria-label="聚焦ERP 帳務與情境，法人・AR／AP・付款配置, MySQL 8.4／erp_demo／mysqldata" aria-pressed="false" data-node-kind="database" data-node-sublabel="法人・AR／AP・付款配置" data-node-context="MySQL 8.4／erp_demo／mysqldata">
+          <title>ERP 帳務與情境 · 法人・AR／AP・付款配置 · MySQL 8.4／erp_demo／mysqldata</title>
+          <rect x="340" y="1060" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="340" y="1060" width="178" height="64" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(346 1066) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="624" y="1069" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MySQL 8.4</text>
-        <text data-detail="context" x="624" y="1085" class="t-muted" font-size="9" text-anchor="middle">InnoDB・三層資料・報表</text>
+          <text data-node-label="" data-detail-anchor="" x="429" y="1090" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ERP 帳務與情境</text>
+        <text data-detail="context" x="429" y="1106" class="t-muted" font-size="9" text-anchor="middle">法人・AR／AP・付款配置</text>
         </g>
 
-        <g id="node-ms-zip" data-node-id="ms-zip" data-node-label="FinanceBenchmark ZIP" tabindex="0" role="button" aria-label="聚焦FinanceBenchmark ZIP，固定版本・2 CSV ＋ 2 XLSX, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="固定版本・2 CSV ＋ 2 XLSX" data-node-context="架構元件">
-          <title>FinanceBenchmark ZIP · 固定版本・2 CSV ＋ 2 XLSX · 架構元件</title>
-          <rect x="40" y="830" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="40" y="830" width="170" height="62" rx="8" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 836) scale(0.6875)">
+        <g id="node-reports" data-node-id="reports" data-node-label="報表與稽核資料" tabindex="0" role="button" aria-label="聚焦報表與稽核資料，Exposure Runs・Items・Links, MySQL 8.4／erp_demo／mysqldata" aria-pressed="false" data-node-kind="database" data-node-sublabel="Exposure Runs・Items・Links" data-node-context="MySQL 8.4／erp_demo／mysqldata">
+          <title>報表與稽核資料 · Exposure Runs・Items・Links · MySQL 8.4／erp_demo／mysqldata</title>
+          <rect x="635" y="920" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="635" y="920" width="178" height="64" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(641 926) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="724" y="950" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">報表與稽核資料</text>
+        <text data-detail="context" x="724" y="966" class="t-muted" font-size="9" text-anchor="middle">Exposure Runs・Items・Links</text>
+        </g>
+
+        <g id="node-source-data" data-node-id="source-data" data-node-label="來源資料與版本" tabindex="0" role="button" aria-label="聚焦來源資料與版本，Raw・Canonical・Quarantine, MySQL 8.4／erp_demo／mysqldata" aria-pressed="false" data-node-kind="database" data-node-sublabel="Raw・Canonical・Quarantine" data-node-context="MySQL 8.4／erp_demo／mysqldata">
+          <title>來源資料與版本 · Raw・Canonical・Quarantine · MySQL 8.4／erp_demo／mysqldata</title>
+          <rect x="340" y="1240" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="340" y="1240" width="178" height="64" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(346 1246) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="429" y="1270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">來源資料與版本</text>
+        <text data-detail="context" x="429" y="1286" class="t-muted" font-size="9" text-anchor="middle">Raw・Canonical・Quarantine</text>
+        </g>
+
+        <g id="node-db-grants" data-node-id="db-grants" data-node-label="MySQL 權限與 Schema" tabindex="0" role="button" aria-label="聚焦MySQL 權限與 Schema，三個服務帳號・表級授權, MySQL 8.4／erp_demo／mysqldata" aria-pressed="false" data-node-kind="security" data-node-sublabel="三個服務帳號・表級授權" data-node-context="MySQL 8.4／erp_demo／mysqldata">
+          <title>MySQL 權限與 Schema · 三個服務帳號・表級授權 · MySQL 8.4／erp_demo／mysqldata</title>
+          <rect x="635" y="1240" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="635" y="1240" width="178" height="64" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(641 1246) scale(0.6875)">
+            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
+            <path d="m5.8 8 1.5 1.5 3-3"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="724" y="1270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MySQL 權限與 Schema</text>
+        <text data-detail="context" x="724" y="1286" class="t-muted" font-size="9" text-anchor="middle">三個服務帳號・表級授權</text>
+        </g>
+
+        <g id="node-zip" data-node-id="zip" data-node-label="FinanceBenchmark ZIP" tabindex="0" role="button" aria-label="聚焦FinanceBenchmark ZIP，固定 commit・2 CSV＋2 XLSX, 架構元件" aria-pressed="false" data-node-kind="external" data-node-sublabel="固定 commit・2 CSV＋2 XLSX" data-node-context="架構元件">
+          <title>FinanceBenchmark ZIP · 固定 commit・2 CSV＋2 XLSX · 架構元件</title>
+          <rect x="40" y="760" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="40" y="760" width="178" height="64" rx="8" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 766) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="125" y="859" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">FinanceBenchmark ZIP</text>
-        <text data-detail="context" x="125" y="875" class="t-muted" font-size="9" text-anchor="middle">固定版本・2 CSV ＋ 2 XLSX</text>
+          <text data-node-label="" data-detail-anchor="" x="129" y="790" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">FinanceBenchmark ZIP</text>
+        <text data-detail="context" x="129" y="806" class="t-muted" font-size="9" text-anchor="middle">固定 commit・2 CSV＋2 XLSX</text>
         </g>
 
-        <g id="node-importer" data-node-id="importer" data-node-label="來源盤點與匯入" tabindex="0" role="button" aria-label="聚焦來源盤點與匯入，欄位映射・隔離・批次校驗, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="欄位映射・隔離・批次校驗" data-node-context="架構元件">
-          <title>來源盤點與匯入 · 欄位映射・隔離・批次校驗 · 架構元件</title>
-          <rect x="40" y="1040" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="40" y="1040" width="170" height="62" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1046) scale(0.6875)">
+        <g id="node-parser" data-node-id="parser" data-node-label="ZIP／CSV／XLSX 解析" tabindex="0" role="button" aria-label="聚焦ZIP／CSV／XLSX 解析，驗證固定版本與欄位盤點, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="驗證固定版本與欄位盤點" data-node-context="架構元件">
+          <title>ZIP／CSV／XLSX 解析 · 驗證固定版本與欄位盤點 · 架構元件</title>
+          <rect x="40" y="920" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="40" y="920" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 926) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="125" y="1069" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">來源盤點與匯入</text>
-        <text data-detail="context" x="125" y="1085" class="t-muted" font-size="9" text-anchor="middle">欄位映射・隔離・批次校驗</text>
+          <text data-node-label="" data-detail-anchor="" x="129" y="950" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ZIP／CSV／XLSX 解析</text>
+        <text data-detail="context" x="129" y="966" class="t-muted" font-size="9" text-anchor="middle">驗證固定版本與欄位盤點</text>
         </g>
 
-        <g id="node-scenario" data-node-id="scenario" data-node-label="模擬帳務建置" tabindex="0" role="button" aria-label="聚焦模擬帳務建置，Baseline・故障・Golden, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Baseline・故障・Golden" data-node-context="架構元件">
-          <title>模擬帳務建置 · Baseline・故障・Golden · 架構元件</title>
-          <rect x="965" y="1040" width="170" height="62" rx="8" class="c-mask"/>
-          <rect x="965" y="1040" width="170" height="62" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(971 1046) scale(0.6875)">
+        <g id="node-importer" data-node-id="importer" data-node-label="交易式資料匯入" tabindex="0" role="button" aria-label="聚焦交易式資料匯入，YAML Mapping・逐列來源, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="YAML Mapping・逐列來源" data-node-context="架構元件">
+          <title>交易式資料匯入 · YAML Mapping・逐列來源 · 架構元件</title>
+          <rect x="40" y="1240" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="40" y="1240" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1246) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1050" y="1069" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">模擬帳務建置</text>
-        <text data-detail="context" x="1050" y="1085" class="t-muted" font-size="9" text-anchor="middle">Baseline・故障・Golden</text>
+          <text data-node-label="" data-detail-anchor="" x="129" y="1270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">交易式資料匯入</text>
+        <text data-detail="context" x="129" y="1286" class="t-muted" font-size="9" text-anchor="middle">YAML Mapping・逐列來源</text>
+        </g>
+
+        <g id="node-scenario" data-node-id="scenario" data-node-label="版本化模擬帳務" tabindex="0" role="button" aria-label="聚焦版本化模擬帳務，Baseline・Faults・Fixture, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Baseline・Faults・Fixture" data-node-context="架構元件">
+          <title>版本化模擬帳務 · Baseline・Faults・Fixture · 架構元件</title>
+          <rect x="948" y="1060" width="178" height="64" rx="8" class="c-mask"/>
+          <rect x="948" y="1060" width="178" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(954 1066) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="1037" y="1090" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">版本化模擬帳務</text>
+        <text data-detail="context" x="1037" y="1106" class="t-muted" font-size="9" text-anchor="middle">Baseline・Faults・Fixture</text>
+        </g>
+
+        <g id="node-bootstrap" data-node-id="bootstrap" data-node-label="Compose init／遷移" tabindex="0" role="button" aria-label="聚焦Compose init／遷移，Alembic・角色配置・匯入, 架構元件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Alembic・角色配置・匯入" data-node-context="架構元件">
+          <title>Compose init／遷移 · Alembic・角色配置・匯入 · 架構元件</title>
+          <rect x="948" y="1240" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="948" y="1240" width="180" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(954 1246) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="1038" y="1270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Compose init／遷移</text>
+        <text data-detail="context" x="1038" y="1286" class="t-muted" font-size="9" text-anchor="middle">Alembic・角色配置・匯入</text>
         </g>
 
         <!-- Connection labels -->
         <g data-detail="context" data-edge-from="mas" data-edge-to="api" data-edge-label="JSON ＋ API Key" data-edge-key="0" data-edge-id="mas-to-api">
-          <rect x="236.5" y="211" width="82" height="14" rx="3" class="c-mask"/>
-          <text x="277.5" y="221" class="t-edge-security" font-size="8" text-anchor="middle">JSON ＋ API Key</text>
+          <rect x="238" y="207" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="279" y="217" class="t-edge-security" font-size="8" text-anchor="middle">JSON ＋ API Key</text>
         </g>
-        <g data-detail="context" data-edge-from="api" data-edge-to="runtime" data-edge-label="啟用後執行" data-edge-key="1" data-edge-id="api-to-runtime">
-          <rect x="556" y="218" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="585" y="228" class="t-edge-default" font-size="8" text-anchor="middle">啟用後執行</text>
+        <g data-detail="context" data-edge-from="api" data-edge-to="runtime" data-edge-label="啟用 Agent" data-edge-key="1" data-edge-id="api-to-runtime">
+          <rect x="547.5" y="214" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="576.5" y="224" class="t-edge-default" font-size="8" text-anchor="middle">啟用 Agent</text>
         </g>
-        <g data-detail="context" data-edge-from="runtime" data-edge-to="skills" data-edge-label="選取與讀取" data-edge-key="2" data-edge-id="runtime-to-skills">
-          <rect x="708.5" y="180" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="737.5" y="190" class="t-edge-default" font-size="8" text-anchor="middle">選取與讀取</text>
+        <g data-detail="context" data-edge-from="runtime" data-edge-to="skills" data-edge-label="載入指引" data-edge-key="2" data-edge-id="runtime-to-skills">
+          <rect x="699.8" y="175" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="724" y="185" class="t-edge-default" font-size="8" text-anchor="middle">載入指引</text>
         </g>
-        <g data-detail="context" data-edge-from="runtime" data-edge-to="session" data-edge-label="讀寫最近 run" data-edge-key="3" data-edge-id="runtime-to-session">
-          <rect x="592.2" y="127.5" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="626" y="137.5" class="t-edge-default" font-size="8" text-anchor="middle">讀寫最近 run</text>
+        <g data-detail="context" data-edge-from="runtime" data-edge-to="sessions" data-edge-label="讀寫 run ID" data-edge-key="3" data-edge-id="runtime-to-sessions">
+          <rect x="579.6" y="126" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="611" y="136" class="t-edge-default" font-size="8" text-anchor="middle">讀寫 run ID</text>
         </g>
-        <g data-detail="context" data-edge-from="runtime" data-edge-to="model" data-edge-label="配置後推理" data-edge-key="4" data-edge-id="runtime-to-model">
-          <rect x="866" y="211" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="895" y="221" class="t-edge-default" font-size="8" text-anchor="middle">配置後推理</text>
+        <g data-detail="context" data-edge-from="runtime" data-edge-to="model" data-edge-label="選用模型" data-edge-key="4" data-edge-id="runtime-to-model">
+          <rect x="856.3" y="207" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="880.5" y="217" class="t-edge-default" font-size="8" text-anchor="middle">選用模型</text>
         </g>
         <g data-detail="context" data-edge-from="runtime" data-edge-to="mcp" data-edge-label="服務 Token ＋ API Key" data-edge-key="5" data-edge-id="runtime-to-mcp">
-          <rect x="620.7" y="336.5" width="110.8" height="14" rx="3" class="c-mask"/>
-          <text x="676.1" y="346.5" class="t-edge-security" font-size="8" text-anchor="middle">服務 Token ＋ API Key</text>
+          <rect x="607.2" y="317.5" width="110.8" height="14" rx="3" class="c-mask"/>
+          <text x="662.6" y="327.5" class="t-edge-security" font-size="8" text-anchor="middle">服務 Token ＋ API Key</text>
         </g>
-        <g data-detail="context" data-edge-from="api" data-edge-to="services" data-edge-label="授權 REST" data-edge-key="6" data-edge-id="api-to-services">
-          <rect x="373.29999999999995" y="434" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="399.9" y="444" class="t-edge-emphasis" font-size="8" text-anchor="middle">授權 REST</text>
+        <g data-detail="context" data-edge-from="api" data-edge-to="services" data-edge-label="REST／MAS" data-edge-key="6" data-edge-id="api-to-services">
+          <rect x="369.79999999999995" y="412.5" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="396.4" y="422.5" class="t-edge-emphasis" font-size="8" text-anchor="middle">REST／MAS</text>
         </g>
-        <g data-detail="context" data-edge-from="mcp" data-edge-to="services" data-edge-label="授權工具呼叫" data-edge-key="7" data-edge-id="mcp-to-services">
-          <rect x="470.2" y="525.5" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="504" y="535.5" class="t-edge-default" font-size="8" text-anchor="middle">授權工具呼叫</text>
+        <g data-detail="context" data-edge-from="mcp" data-edge-to="services" data-edge-label="具名工具" data-edge-key="7" data-edge-id="mcp-to-services">
+          <rect x="515.8499999999999" y="402" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="540.05" y="412" class="t-edge-emphasis" font-size="8" text-anchor="middle">具名工具</text>
         </g>
-        <g data-detail="context" data-edge-from="mcp" data-edge-to="kyriba" data-edge-label="啟用後註冊" data-edge-key="8" data-edge-id="mcp-to-kyriba">
-          <rect x="866" y="436" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="895" y="446" class="t-edge-default" font-size="8" text-anchor="middle">啟用後註冊</text>
+        <g data-detail="context" data-edge-from="mcp" data-edge-to="kyriba" data-edge-label="選用唯讀工具" data-edge-key="8" data-edge-id="mcp-to-kyriba">
+          <rect x="846.7" y="402" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="880.5" y="412" class="t-edge-default" font-size="8" text-anchor="middle">選用唯讀工具</text>
         </g>
-        <g data-detail="context" data-edge-from="kyriba" data-edge-to="kyriba-remote" data-edge-label="Live OAuth2／GET" data-edge-key="9" data-edge-id="kyriba-to-kyriba-remote">
-          <rect x="957.2" y="546.5" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="1000.6" y="556.5" class="t-edge-security" font-size="8" text-anchor="middle">Live OAuth2／GET</text>
+        <g data-detail="context" data-edge-from="kyriba" data-edge-to="kyriba-api" data-edge-label="Live OAuth2／GET" data-edge-key="9" data-edge-id="kyriba-to-kyriba-api">
+          <rect x="945.2" y="510" width="86.8" height="14" rx="3" class="c-mask"/>
+          <text x="988.6" y="520" class="t-edge-security" font-size="8" text-anchor="middle">Live OAuth2／GET</text>
         </g>
-        <g data-detail="context" data-edge-from="services" data-edge-to="domain" data-edge-label="驗證並計算" data-edge-key="10" data-edge-id="services-to-domain">
-          <rect x="248.5" y="631" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="277.5" y="641" class="t-edge-emphasis" font-size="8" text-anchor="middle">驗證並計算</text>
+        <g data-detail="context" data-edge-from="services" data-edge-to="fx" data-edge-label="驗證並計算" data-edge-key="10" data-edge-id="services-to-fx">
+          <rect x="250" y="592" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="279" y="602" class="t-edge-emphasis" font-size="8" text-anchor="middle">驗證並計算</text>
         </g>
-        <g data-detail="context" data-edge-from="services" data-edge-to="query" data-edge-label="租戶與法人範圍" data-edge-key="11" data-edge-id="services-to-query">
-          <rect x="349.29999999999995" y="749" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="387.9" y="759" class="t-edge-security" font-size="8" text-anchor="middle">租戶與法人範圍</text>
+        <g data-detail="context" data-edge-from="services" data-edge-to="repository" data-edge-label="租戶／法人／情境" data-edge-key="11" data-edge-id="services-to-repository">
+          <rect x="336.20000000000005" y="720" width="86.8" height="14" rx="3" class="c-mask"/>
+          <text x="379.6" y="730" class="t-edge-security" font-size="8" text-anchor="middle">租戶／法人／情境</text>
         </g>
-        <g data-detail="context" data-edge-from="services" data-edge-to="run-store" data-edge-label="讀寫正式報表" data-edge-key="12" data-edge-id="services-to-run-store">
-          <rect x="551.2" y="638" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="585" y="648" class="t-edge-default" font-size="8" text-anchor="middle">讀寫正式報表</text>
+        <g data-detail="context" data-edge-from="services" data-edge-to="store" data-edge-label="保存／重查 run" data-edge-key="12" data-edge-id="services-to-store">
+          <rect x="537.9" y="601.1" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="576.5" y="611.1" class="t-edge-emphasis" font-size="8" text-anchor="middle">保存／重查 run</text>
         </g>
-        <g data-detail="context" data-edge-from="query" data-edge-to="mysql" data-edge-label="唯讀交易" data-edge-key="13" data-edge-id="query-to-mysql">
-          <rect x="449.6" y="967" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="473.8" y="977" class="t-edge-security" font-size="8" text-anchor="middle">唯讀交易</text>
+        <g data-detail="context" data-edge-from="repository" data-edge-to="ledger" data-edge-label="erp_read · SELECT" data-edge-key="13" data-edge-id="repository-to-ledger">
+          <rect x="331.4" y="960" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="377.2" y="970" class="t-edge-security" font-size="8" text-anchor="middle">erp_read · SELECT</text>
         </g>
-        <g data-detail="context" data-edge-from="run-store" data-edge-to="mysql" data-edge-label="報表／稽核讀寫" data-edge-key="14" data-edge-id="run-store-to-mysql">
-          <rect x="613.8" y="854" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="652.4" y="864" class="t-edge-default" font-size="8" text-anchor="middle">報表／稽核讀寫</text>
+        <g data-detail="context" data-edge-from="store" data-edge-to="reports" data-edge-label="erp_app · SELECT／INSERT" data-edge-key="14" data-edge-id="store-to-reports">
+          <rect x="592.8" y="775" width="125.19999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="655.4" y="785" class="t-edge-security" font-size="8" text-anchor="middle">erp_app · SELECT／INSERT</text>
         </g>
-        <g data-detail="context" data-edge-from="ms-zip" data-edge-to="importer" data-edge-label="掛載唯讀 ZIP" data-edge-key="15" data-edge-id="ms-zip-to-importer">
-          <rect x="51.400000000000006" y="959" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="85.2" y="969" class="t-edge-default" font-size="8" text-anchor="middle">掛載唯讀 ZIP</text>
+        <g data-detail="context" data-edge-from="zip" data-edge-to="parser" data-edge-label="唯讀掛載" data-edge-key="15" data-edge-id="zip-to-parser">
+          <rect x="74.6" y="865" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="98.8" y="875" class="t-edge-default" font-size="8" text-anchor="middle">唯讀掛載</text>
         </g>
-        <g data-detail="context" data-edge-from="importer" data-edge-to="mysql" data-edge-label="寫入 Raw／Canonical" data-edge-key="16" data-edge-id="importer-to-mysql">
-          <rect x="321.9" y="1051" width="101.2" height="14" rx="3" class="c-mask"/>
-          <text x="372.5" y="1061" class="t-edge-default" font-size="8" text-anchor="middle">寫入 Raw／Canonical</text>
+        <g data-detail="context" data-edge-from="parser" data-edge-to="importer" data-edge-label="欄位與列" data-edge-key="16" data-edge-id="parser-to-importer">
+          <rect x="74.6" y="1105" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="98.8" y="1115" class="t-edge-default" font-size="8" text-anchor="middle">欄位與列</text>
         </g>
-        <g data-detail="context" data-edge-from="scenario" data-edge-to="mysql" data-edge-label="讀日記帳、寫情境" data-edge-key="17" data-edge-id="scenario-to-mysql">
-          <rect x="795.6" y="1051" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="839" y="1061" class="t-edge-default" font-size="8" text-anchor="middle">讀日記帳、寫情境</text>
+        <g data-detail="context" data-edge-from="importer" data-edge-to="source-data" data-edge-label="erp_importer · 寫來源" data-edge-key="17" data-edge-id="importer-to-source-data">
+          <rect x="223.6" y="1252" width="110.8" height="14" rx="3" class="c-mask"/>
+          <text x="279" y="1262" class="t-edge-security" font-size="8" text-anchor="middle">erp_importer · 寫來源</text>
+        </g>
+        <g data-detail="context" data-edge-from="scenario" data-edge-to="source-data" data-edge-label="讀 Canonical" data-edge-key="18" data-edge-id="scenario-to-source-data">
+          <rect x="508.2" y="1165.5" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="542" y="1175.5" class="t-edge-default" font-size="8" text-anchor="middle">讀 Canonical</text>
+        </g>
+        <g data-detail="context" data-edge-from="scenario" data-edge-to="ledger" data-edge-label="erp_importer · 寫帳務" data-edge-key="19" data-edge-id="scenario-to-ledger">
+          <rect x="677.6" y="1065" width="110.8" height="14" rx="3" class="c-mask"/>
+          <text x="733" y="1075" class="t-edge-security" font-size="8" text-anchor="middle">erp_importer · 寫帳務</text>
+        </g>
+        <g data-detail="context" data-edge-from="bootstrap" data-edge-to="db-grants" data-edge-label="root · DDL／GRANT" data-edge-key="20" data-edge-id="bootstrap-to-db-grants">
+          <rect x="834.7" y="1252" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="880.5" y="1262" class="t-edge-security" font-size="8" text-anchor="middle">root · DDL／GRANT</text>
         </g>
 
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="Compose API 程序與 Session Volume">
-          <rect data-graph-role="structural-frame-label-mask" x="332" y="20" width="188.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="336" y="33" class="t-cloud" font-size="9" font-weight="600">Compose API 程序與 Session Volume</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="Compose API 容器與 Session volume">
+          <rect data-graph-role="structural-frame-label-mask" x="327" y="20" width="188.2" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="331" y="33" class="t-cloud" font-size="9" font-weight="600">Compose API 容器與 Session volume</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="1" data-composition-frame-kind="region" data-composition-frame-label="Compose MCP 程序">
-          <rect data-graph-role="structural-frame-label-mask" x="637" y="405" width="96.39999999999999" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="641" y="418" class="t-cloud" font-size="9" font-weight="600">Compose MCP 程序</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="1" data-composition-frame-kind="region" data-composition-frame-label="Compose MCP 容器">
+          <rect data-graph-role="structural-frame-label-mask" x="622" y="370" width="96.39999999999999" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="626" y="383" class="t-cloud" font-size="9" font-weight="600">Compose MCP 容器</text>
+        </g>
+
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="2" data-composition-frame-kind="region" data-composition-frame-label="MySQL 8.4／erp_demo／mysqldata">
+          <rect data-graph-role="structural-frame-label-mask" x="437" y="900" width="172" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="441" y="913" class="t-cloud" font-size="9" font-weight="600">MySQL 8.4／erp_demo／mysqldata</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="" data-legend-bridge="">
-          <text x="40" y="1134" class="t-primary" font-size="12" font-weight="650">圖例</text>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="後端" data-legend-x="40" data-legend-baseline="1154" data-legend-width="68">
-            <rect x="40" y="1145" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
-            <text x="62" y="1154" class="t-muted" font-size="10" font-weight="500">後端</text>
+          <text x="40" y="1356" class="t-primary" font-size="12" font-weight="650">圖例</text>
+          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="後端" data-legend-x="40" data-legend-baseline="1376" data-legend-width="68">
+            <rect x="40" y="1367" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
+            <text x="62" y="1376" class="t-muted" font-size="10" font-weight="500">後端</text>
           </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="資料庫" data-legend-x="130" data-legend-baseline="1154" data-legend-width="81">
-            <rect x="130" y="1145" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
-            <text x="152" y="1154" class="t-muted" font-size="10" font-weight="500">資料庫</text>
+          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="資料庫" data-legend-x="130" data-legend-baseline="1376" data-legend-width="81">
+            <rect x="130" y="1367" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
+            <text x="152" y="1376" class="t-muted" font-size="10" font-weight="500">資料庫</text>
           </g>
-          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="外部系統" data-legend-x="233" data-legend-baseline="1154" data-legend-width="93">
-            <rect x="233" y="1145" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
-            <text x="255" y="1154" class="t-muted" font-size="10" font-weight="500">外部系統</text>
+          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="安全" data-legend-x="233" data-legend-baseline="1376" data-legend-width="68">
+            <rect x="233" y="1367" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
+            <text x="255" y="1376" class="t-muted" font-size="10" font-weight="500">安全</text>
+          </g>
+          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="外部系統" data-legend-x="323" data-legend-baseline="1376" data-legend-width="93">
+            <rect x="323" y="1367" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
+            <text x="345" y="1376" class="t-muted" font-size="10" font-weight="500">外部系統</text>
           </g>
         </g>
       </svg>
@@ -5803,83 +5896,126 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="card">
         <div class="card-header">
           <div class="card-dot cyan"></div>
-          <h3>HTTP 入口與身分</h3>
+          <h3>啟動與網路</h3>
         </div>
         <ul>
-          <li>REST 提供曝險分析、報表重查、MAS 任務、資料集 manifest／quality、情境與 run 血緣。請求以 API Key 取得租戶、操作者及允許法人。列級血緣與資料集清單有額外管理員條件。</li>
-          <li>來源：src/erp_agent/api/main.py:107–186、api/dependencies.py:9–24、security/authorization.py:10–37、application/dataset_service.py:20–44、98–151（後三者位於 src/erp_agent）。</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot violet"></div>
-          <h3>Agent、Skills 與 Memory</h3>
-        </div>
-        <ul>
-          <li>Agent 只有設定啟用且有憑證或注入測試模型才執行。Skills 依請求挑選，WorkingState 保存本次工具紀錄。SQLite 依租戶、操作者類型、操作者和 session 保留最近的 run ID，預設一天。</li>
-          <li>模型回傳的 run ID 必須來自同次授權工具結果。Runtime 從曝險服務重讀正式報表，並以報表資料產生摘要。</li>
-          <li>來源：src/erp_agent/agent/runtime.py:44–105、150–199，agent/tool_allowlist.py:30–114，memory/session_store.py:10–49（後兩者位於 src/erp_agent）。</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot emerald"></div>
-          <h3>MCP 與具名唯讀查詢</h3>
-        </div>
-        <ul>
-          <li>ERP 工具有 get_erp_schema、list_legal_entities、query_erp_sql、calc_net_exposure、get_exposure_report。另提供 erp://schema/exposure-v1 資源與 analyze_fx_exposure 提示。</li>
-          <li>query_erp_sql 只接受 open_ar、open_ap、overdue_ar、overdue_ap、entity_list、source_lineage。工具查詢與曝險讀取共用授權快照，MCP 先驗服務 Token 與呼叫者 API Key。</li>
-          <li>來源：src/erp_agent/mcp/server.py:110–190、256–294，mcp/auth.py:21–44，database/named_queries.py:5–9（後兩者位於 src/erp_agent）。</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot emerald"></div>
-          <h3>一致快照、曝險與正式報表</h3>
-        </div>
-        <ul>
-          <li>MySQL 讀者在 REPEATABLE READ 唯讀交易取得同一情境版本的法人、AR、AP、付款配置與來源資料。以截至日有效且已過帳的付款算未結餘額，逾期獨立彙總。品質錯誤回傳 FAILED 並抑制曝險明細。</li>
-          <li>報表交易保存 exposure_runs、exposure_items、run_source_links 與 audit_events。重放與取件會再驗授權，資料集服務透過已授權 run 血緣查回模擬文件及來源列位置。</li>
-          <li>來源：src/erp_agent/database/engine.py:11–27、repository.py:177–304，domain/exposure_calculator.py:44–128，application/exposure_service.py:22–110，memory/run_store.py:27–83。</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot amber"></div>
-          <h3>來源匯入、情境與資料血緣</h3>
-        </div>
-        <ul>
-          <li>下載工具驗證 FinanceBenchmark 固定 Git blob，並記錄 ZIP SHA-256。匯入由 CSV／XLSX parser 盤點欄位，以版本化 YAML 映射到 Canonical 主檔／日記帳。Raw 保留列內容、列雜湊與位置，無法精確映射的列進入 Quarantine。</li>
-          <li>情境建置讀 Canonical 日記帳與來源關聯。Baseline 覆加模擬到期日、幣別及付款配置，另提供隔離的 fixture_only 和 data_quality_faults。血緣沿 raw → canonical → scenario → run，可按報表追查。</li>
-          <li>來源：src/erp_agent/ingestion/source_manifest.py:5–39、load_mysql.py:74–163、scenario_builder.py:99–173、197–319、322–373，scripts/build_demo_scenario.py:27–41。</li>
+          <li>Compose 專案 erp-agent-financebenchmark 啟動 db、init、mcp、api。db 健康後，init 依序執行 Alembic、角色配置、FinanceBenchmark 匯入及情境建立。init 成功後 MCP 才啟動，API 也等待 MCP 啟動。</li>
+          <li>主機 API 預設 127.0.0.1:8000。MCP 在 Compose 內部使用 http://mcp:8001/mcp。MySQL 容器端為 db:3306。目前工作區額外把 MySQL 映射至 127.0.0.1:3307，這項埠映射來自尚未提交的 Compose 設定。</li>
+          <li>mysqldata 保存 MySQL 資料。sessions volume 保存 API 的 /app/data/sessions.db。</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div class="card-dot rose"></div>
-          <h3>Kyriba 查詢支線</h3>
+          <h3>資料庫登入憑證與權限</h3>
         </div>
         <ul>
-          <li>啟用後提供 Companies、Cash Flows、Cash Balances、Third Parties 查詢。唯讀服務核對租戶下的法人／帳戶映射，做 Pydantic 正規化、分頁及錯誤處理。Mock 從本機 gateway 取資料，Live 從環境設定取得 OAuth2 Token URL 和 API Base URL。</li>
-          <li>Kyriba 結果由 MCP 回傳。FinanceBenchmark 曝險服務的資料來源是 SQLAlchemy ERP 快照。</li>
-          <li>來源：src/erp_agent/mcp/server.py:190–253、kyriba/service.py:195–251、kyriba/client.py:186–283、application/services.py:14–23（後三者位於 src/erp_agent）。</li>
+          <li>Compose 將 ERP_IMPORTER_PASSWORD 展開到 ERP_IMPORT_DATABASE_URL。init 的匯入及情境 CLI 自己用 erp_importer 登入，對來源、帳務與來源中繼表做 SELECT／INSERT，且只更新匯入批次與目前版本指標。</li>
+          <li>ERP_READ_PASSWORD 對應 ERP_READ_DATABASE_URL。FastAPI 與 MCP 的 repository 都用 erp_read，只能 SELECT 帳務與獲准的資料集中繼表。ERP_APP_PASSWORD 對應 DATABASE_URL，兩個服務使用 erp_app 在報表、細項、run 來源關聯及稽核表 SELECT／INSERT。</li>
+          <li>MYSQL_ROOT_PASSWORD 給 init 的管理連線與 MySQL 初始化使用，負責遷移及建帳號授權。API Key、MCP 服務 Token、OpenAI key 與資料庫帳號各有自己的驗證用途。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot cyan"></div>
+          <h3>REST、MAS 與權限</h3>
+        </div>
+        <ul>
+          <li>FastAPI 在 /v1 下提供法人／綱要、曝險、資料集、情境、報表血緣、MAS 任務及 Agent API。/healthz 檢查程序，/readyz 檢查讀寫連線與 MySQL baseline。/docs 和 /openapi.json 提供契約。</li>
+          <li>X-API-Key 對應 tenant_id、actor、entity_ids。MAS 任務另要求 service principal。dataset_admin 可讀 manifest 與列級血緣。報表重查以租戶與獲授權法人驗證。Idempotency-Key 同請求可重放，改參數會回 409。</li>
+          <li>FastAPI 與 MCP 各自建立一份共用應用服務和連線池。圖上的「共用應用服務」代表兩個程序執行相同的 Python 模組。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot emerald"></div>
+          <h3>具名 MCP 查詢與工具契約</h3>
+        </div>
+        <ul>
+          <li>MCP 在 Starlette 上用 Streamable HTTP，驗證服務 Bearer Token 與授權的 X-API-Key，並帶入 X-Request-ID。核心工具為 get_erp_schema、list_legal_entities、query_erp_sql、calc_net_exposure、get_exposure_report。</li>
+          <li>具名查詢限 open_ar、open_ap、overdue_ar、overdue_ap、entity_list、source_lineage。工具請求經型別驗證、法人與列數限制。另有 erp://schema/exposure-v1 資源及 analyze_fx_exposure 提示。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot violet"></div>
+          <h3>自然語言 Agent、Skills 與記憶</h3>
+        </div>
+        <ul>
+          <li>/v1/agent/run 需要 ENABLE_LLM_AGENT 與 MCP 設定。實際 OpenAI 模式還需要 OPENAI_API_KEY／OPENAI_MODEL，測試可注入 Fake Model。Agent Runtime 讀取 instructions.md，並挑選 fx-exposure-analysis 或 erp-data-quality Skills。</li>
+          <li>模型透過受限工具參數呼叫具名 MCP。WorkingState 記錄工具次數、結果及獲授權 run ID。Runtime 驗證模型選出的 run ID 後，透過曝險服務重讀已保存報表並建立摘要。SQLite 只保留最近的 run 參照，依租戶、操作者類型、操作者與 session 隔離，預設 24 小時。</li>
+          <li>Agent Runner 停用 trace export 及模型儲存選項。OpenAI 連線為選用支線，REST／MCP 的曝險可獨立執行。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot emerald"></div>
+          <h3>授權快照、財務計算與錯誤處理</h3>
+        </div>
+        <ul>
+          <li>erp_read 以 SQLAlchemy Core 參數化查詢，在單一 MySQL REPEATABLE READ、READ ONLY 交易內固定情境版本，讀取法人、AR、AP 與付款配置。</li>
+          <li>計算以 Decimal 使用截至日有效且已過帳的付款求未結金額，再以法人、幣別、到期月份彙總 AR 減 AP。逾期金額獨立彙總。品質警告可能使報表為 PARTIAL，阻斷錯誤使報表回 FAILED，並清空曝險明細。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot emerald"></div>
+          <h3>報表、稽核與血緣查回</h3>
+        </div>
+        <ul>
+          <li>erp_app 在同一交易保存 exposure_runs、exposure_items、run_source_links、audit_events，保留輸入雜湊、快照版本、品質結果與來源參照。GET /v1/exposures/{run_id} 可重查已授權的報表。</li>
+          <li>列級血緣先透過 erp_app 查 run 關聯，再透過 erp_read 查情境文件及來源索引。管理員可查原始檔名、工作表及列位置。Request ID 用來串接 REST／MCP、日誌和資料庫稽核。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot amber"></div>
+          <h3>來源 ZIP、標準化與可重複匯入</h3>
+        </div>
+        <ul>
+          <li>下載工具固定 Microsoft FinanceBenchmark commit 6ced62b961d4c18b2ba53f268b443eb852fb73ca，驗證 Git blob 並記錄 ZIP SHA-256。Compose 將 data/source 唯讀掛載至 /source。Parser 讀兩個 UTF-8 CSV、兩個 XLSX 交易工作表，資料快取輔助工作表另行盤點。</li>
+          <li>版本化 YAML 將來源轉為客戶／供應商與日記帳。Raw 保留原值、行位置與雜湊，Canonical 使用精確金額，超出 DECIMAL(20,4) 精度的列進入隔離。這個固定版本驗收有 8,887 筆 Raw、8,249 筆 Canonical、638 筆隔離。</li>
+          <li>匯入鎖定批次、寫入資料後更新當前來源指標。同一檔案及同一 mapping 重跑沿用相同批次。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot amber"></div>
+          <h3>情境版本、帳款與資料血緣</h3>
+        </div>
+        <ul>
+          <li>Scenario builder 以 erp_importer 查詢 Canonical 日記帳及來源關聯，用固定 seed 建立版本化 Aster 帳務。baseline 覆加模擬到期日、幣別、付款與帳款狀態。data_quality_faults 包含刻意安排的品質錯誤，fixture_only 用獨立測試資料。</li>
+          <li>ERP 帳務存於 legal_entities、ar_invoices、ap_invoices、payment_allocations，情境與版本走 demo_scenario_documents、dataset_versions。來源血緣連接 Raw 行、Canonical、情境文件與報表 run。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot rose"></div>
+          <h3>Kyriba 唯讀支線</h3>
+        </div>
+        <ul>
+          <li>KYRIBA_MODE 預設 disabled。mock 使用本機 fixtures。live 依環境變數取得 OAuth2 Token URL、Base URL 和 Client Credentials，使用 GET 查公司、現金流、現金餘額與第三方。</li>
+          <li>適配器驗證租戶、法人與帳戶映射，正規化為 Pydantic 回應並處理分頁、403、逾時及受限重試。Kyriba 結果由 MCP 回傳，FinanceBenchmark 曝險路徑使用 MySQL ERP 快照。</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div class="card-dot slate"></div>
-          <h3>部署與圖譜範圍</h3>
+          <h3>原始碼與工作區版本</h3>
         </div>
         <ul>
-          <li>Compose 的 init 等待 MySQL 健康，依序執行 Alembic、角色配置、來源匯入、情境建置。成功後 MCP 與 API 才啟動。預設僅在 127.0.0.1 暴露 API，MySQL 與 MCP 使用容器網路。</li>
-          <li>erp_read 讀取 ERP 與允許的中繼資料，erp_app 存取報表及稽核，erp_importer 負責匯入。此圖按目前本機程式碼與 Compose 預設設定繪製。程式目錄無 Git 歷史，來源位置以文字列示。</li>
-          <li>來源：docker-compose.yml:3–9、17–86，scripts/provision_mysql_roles.py:33–72。</li>
+          <li>節點來源引用以 Git commit 64937fd8efc6716ed182fc39c0274760ea7f5e10 驗證，本機標記顯示檔案與行號。工作區另有 Docker Compose 本機資料庫埠、.env.example 範例設定與交付文件變更。圖中 3307 映射特別標示為工作區設定。</li>
+          <li>此圖依目前程式碼與 Compose 設定繪製，金額與匯入列數為固定資料版本的驗收結果。</li>
         </ul>
       </div>
     </div>

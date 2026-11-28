@@ -16,6 +16,8 @@ x-erp-image: &erp-image
 services:
   db:
     image: mysql:8.4
+    ports:
+      - "127.0.0.1:3307:3306"
     command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_as_cs", "--default-time-zone=+00:00"]
     environment:
       MYSQL_ROOT_HOST: "%"
